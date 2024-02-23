@@ -6,17 +6,17 @@ category: Jekyll
 layout: post
 ---
 
-1. Luo itsellesi hakemisto, mihin tulet tekemään testauksen tehtävät. Aja terminaalilla tässä hakemistossa komento `npm init -y`. Hakemistoon pitäisi ilmestyä tiedosto `package.json`. Jos näin ei käy tai saat jonkun virheen, sinulla ei todennäköisesti ole asennettu Nodea. Asenna se haluamallasi tavalla, esim. [NodeJS:n verkkosivuilta](https://nodejs.org)
+1. Luo itsellesi hakemisto, mihin tulet tekemään testauksen tehtävät. Aja terminaalilla tässä hakemistossa komento {% highlight bash %}npm init -y{% endhighlight %} Hakemistoon pitäisi ilmestyä tiedosto `package.json`. Jos näin ei käy tai saat jonkun virheen, sinulla ei todennäköisesti ole asennettu Nodea. Asenna se haluamallasi tavalla, esim. [NodeJS:n verkkosivuilta](https://nodejs.org)
 
 2. Aja terminaalilla luomassasi hakemistossa komento `npm i -D eslint eslint-config-google eslint-config-prettier prettier`. Nyt hakemistossa pitäisi olla myös tiedosto `package-lock.json` sekä uusi hakemisto, `node_modules`.
 
 3. Luo hakemistoon tiedosto `.eslintrc` (huom! ei tiedostopäätettä) ja kopio siihen seuraava koodi:
 
 {% highlight json %}
-   {
-      "extends": ["google", "prettier"],
-      "parserOptions": {
-         "ecmaVersion": 2020
+{
+   "extends": ["google", "prettier"],
+   "parserOptions": {
+      "ecmaVersion": 2020
    },
 
    "env": {
@@ -60,13 +60,15 @@ Nyt package.json-tiedostossasi tulisi olla jotakin tämän näköistä:
 }
 {% endhighlight %}
 
-5. package.json tiedostossa on kohta "scripts", jossa lukee "test": "echo \"Error: no test specified\" && exit 1"
+5. package.json tiedostossa on kohta `scripts`, jossa lukee `test: "echo \"Error: no test specified\" && exit 1`
 
 Päivitä se alla näkyvään muotoon:
 
+{% highlight json %}
 "scripts": {
 "test": "npx mocha"
 }
+{% endhighlight %}
 
 6. Luo ympäristömme testausta varten uusi hakemisto päähakemiston alle, ja anna sille nimeksi vaikkapa "laskin". Lataa laskin_koodit.zip-tiedosto, jossa on tiedostot laskin.js ja laskinTest.js. Siirry laskin-hakemistoosi (tai miksikä sen nimesit), ja siirrä laskin.js sinne. Luo uusi hakemisto nimeltä "test", ja siirrä laskinTest.js-tiedosto sinne.
 
