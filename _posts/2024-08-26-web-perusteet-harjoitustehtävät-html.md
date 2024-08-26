@@ -69,8 +69,8 @@ Kuvaile kaikki eri osat joita on mukana alla olevassa HTML–koodinpätkässä (
 ```
 Lue seuraavat dokumentaatiot. Pyri ymmärtämään niiden sisältö ja tee muistiinpanoja lukemastasi.
 
-[Ensimmäinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Glossary/HTML)
-[Toinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
+- [Ensimmäinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Glossary/HTML)
+- [Toinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
 
 Nämä dokumentaatiot toimivat pohjana seuraavalle luennolle.
 
