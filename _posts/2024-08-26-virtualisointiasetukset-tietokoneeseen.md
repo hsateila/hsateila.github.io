@@ -2,6 +2,7 @@
 layout: post
 title: Virtualisointiasetukset tietokoneeseen
 date: 2024-08-26 13:11 +0300
+categories: [Opintojaksot, Käyttöjärjestelmät ja palvelimet]
 ---
 # Virtualisointiasetukset kohdalleen
 ## HyperV:n poistaminen käytöstä
