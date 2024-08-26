@@ -16,35 +16,40 @@ Elementit on muistettava myös sulkea! Elementti suljetaan lähtökohtaisesti ai
 
 Otsikkoelementtejä (esimerkiksi ```<h1>``` on yhteensä kuusi tasoa. Numero elementissä kertoo otsikon tason (ei siis otsikoiden järjestystä!). Tämä tarkoittaa sitä, että dokumentissa voi olla useampia samantasoisia otsikoita.
 
-Linkit luodaan ```href``` _attribuutilla_. Voit linkittää paikallisia tiedostoja käyttämällä _suhteellista_ linkitystä haluttuun tiedostoon, kuten vaikkapa kuvatiedostoon. Suhteellinen linkitys tarkoittaa sitä, että linkki viittaa tiedostoon suhteessa sen tiedoston sijaintiin, missä linkki on. Absoluuttista linkitystä tulee käyttää vain ja ainoastaan linkitettäessä toisille verkkosivuille tai domaineille. Absoluuttisen linkin tulee aina alkaa protokollalla, kaksoispisteellä ja tuplatakakenolla, kuten **http://**, **ftp://** tai ***https://** jota seuraa itse osoite. Esimerkiksi: https://www.example.com/
+Linkit luodaan ```href``` _attribuutilla_. Voit linkittää paikallisia tiedostoja käyttämällä _suhteellista_ linkitystä haluttuun tiedostoon, kuten vaikkapa kuvatiedostoon. Suhteellinen linkitys tarkoittaa sitä, että linkki viittaa tiedostoon suhteessa sen tiedoston sijaintiin, missä linkki on. Absoluuttista linkitystä tulee käyttää vain ja ainoastaan linkitettäessä toisille verkkosivuille tai domaineille. Absoluuttisen linkin tulee aina alkaa protokollalla, kaksoispisteellä ja tuplatakakenolla, kuten **http://**, **ftp://** tai ***https://** jota seuraa itse osoite. Esimerkiksi: **https://www.example.com/**
 
-Jos tiedostonimeä linkissä ei anneta, selain yrittää hakea sijainnista oletusarvoisesti tiedostoa jonka nimi on index.html.
+Jos tiedostonimeä linkissä ei anneta, selain yrittää hakea sijainnista oletusarvoisesti tiedostoa jonka nimi on ```index.html```.
 
-## Preparing for the exercises
-If you haven’t already created a folder named “webui” somewhere convenient. Please do so now. Use that as a folder to store all your exercises and the final assignment. I’d recommend storing the assignments in subfolders, of the said “webui” folder. For example, for the next assignment create a folder “helloworld” or similar.
+## Harjoituksiin valmistautuminen
+Jos et vielä ole tehnyt, luo nyt kansio esimerkiksi nimellä "webPerusteet" johonkin sopivaan kansioon. Tässä vaiheessa sijainnilla ei ole suurta merkitystä. Käytä tätä kansiota kaikille harjoituksille sekä lopputyölle. Suosittelen tekemään harjoituksille ja lopputyölle kullekin omat alikansiot "webPerusteet" -kansion alle. Voit esimerkiksi tehdä kansion "helloworld" ensimmäistä harjoitustehtävää varten "webPerusteet" -kansion alle.
 
 ## 1. Hello World
-“Hello World” is typically the first exercise when start studying geek stuff and we are not an exception. Open the aforementioned “helloworld” folder, with Visual Studio Code, and create a plain text file containing the following content:
+“Hello World” eli Hei maailma! on tyypillisesti ensimmäinen harjoitus, opetellaanpa sitten mitä tahansa uutta ATK-asiaa, eikä tässä tehdä poikkeusta. Avaa edellä tekemäsi "helloworld" -kansio Visual Studio Codessa ja luo sinne tavallinen tekstitiedosto jossa on seuraava sisältö:
 
 ```html
-Welcome to [your name]'s website.
+Tervetuloa [oma nimesi]n verkkosivulle.
 
 Hello world!
 ```
-Open the page in a browser using Live Server, and the browser of your choice. It doesn’t look the same in the browser. Why? That’s because the browser interprets the HTML markup language and newlines, for example, must be defined explicitly. If it doesn’t open at all and doesn’t have color highlighting enabled - if Visual Studio Code is not displaying your code in colors, make sure that you have saved file with html extension. Visual Studio Code has different toolsets and highlighting depending on the file you have open.
 
-Let’s continue by adding some HTML elements: use h1 for ‘Welcome…’ and p for ‘Hello World!’.
+Avaa verkkosivu käyttäen Live Server -lisäosaa ja haluamaasi selainta. Verkkosivu ei näytä samanlaiselta selaimessa. Miksei?
 
-The Live Server addon for VSCode should refresh your saved changes instantly, and allows you to see the current version of the page. It looks better but it is not okay yet because we are not following the HTML grammar. Validate your document (validator.w3.org) and you’ll see a couple of error messages. Take your time to understand the meaning of each error message. Correct your code step by step and revalidate the document after each change.
+- Tämä johtuu siitä että verkkoselain tulkitsee HTML-merkintäkieltä. Rivinvaihdot ja kaikki muu rakenne tulee ilmaista selaimelle eksplisiittisesti merkintäkielellä jotta selain osaa näyttää tiedoston sisällön verkkosivuna toivotulla tavalla.
 
-Important information below!
+- Jos tiedosto ei näy selaimessa lainkaan tai Visual Studio Code ei korosta koodiasi värein, varmista että olet tallentanut tiedoston oikealla tiedostopäätteellä ```.htm``` tai ```.html```. Visual Studio Codessa on paljon erilaisia työkalusettejä sekä korostuksia (highlighting) tiedostolle joka sinulla nyt on auki.
 
-CSS is an abbreviation for Cascading Style Sheets. Styles define how HTML elements are rendered (ie, how they are displayed in a browser) and thus they work in conjunction with HTML elements. CSS declarations are created also with a text editor but syntax differs from HTML.
+Jatketaan seuraavaksi lisäämällä joitakin HTML-elementtejä: Käytä ```<h1>``` -elementtiä rivillä joka alkaa "Tervetuloa..." ja ```<p>```elementtiä "Hello world!" -tekstille ja tallenna tiedosto.
 
-Read the CSS introduction and CSS Syntax.
+Live Server -lisäosan pitäisi nyt päivittää muutoksesi selaimeen saman tien kun tallennat muutokset, ja näyttää nykyisen version sivusta. Sivu näyttää nyt paremmalta, mutta ei vieläkään ole aivan kunnossa koska emme seuraa HTML-merkintäkielen määrittelyä. Validoi luomasi dokumentti [W3 Consortiumin validaattorilla](https://validator.w3.org/#validate_by_input) ja katso lopputulos. Voit leikata ja liimata koodin editorista suoraan sivulle ja ajaa validoinnin "Check" -nappia painamalla. Korjaa koodiasi validaattorin ohjeiden mukaisesti kunnes koodi menee validoinnista läpi.
 
-Hello World continues!
-Next we are going to apply some style definitions to change the appearance a bit. Add style element inside head element in your HTML document. Copy the CSS code below and paste it inside the style element. Refresh your browser to see the changes. Is it working? Nope, there must be a typo or something. Check if Visual Studio Code gives you errors. Fix them. Then check the validity of CSS and fix errors, if any.
+>**CSS** on lyhenne sanoista Cascading Style Sheets. CSS-tiedostossa määritellään verkkosivun tyylit ja asettelu. Tyylit määrittelevät miten sivu _renderöidään_ eli näytetään selaimessa. Tyylit toimivat yhdessä HTML-elementtien kanssa. CSS-määritykset (declarations) luodaan myös tekstieditorissa, mutta syntaksi eli kirjoitusmuoto eroaa HTML:stä.
+{: .prompt-info}
+
+Lue [CSS-esittely](https://www.w3schools.com/css/css_intro.asp) ja [CSS:n syntaksi](https://www.w3schools.com/css/css_syntax.asp).
+
+Seuraavaksi lisäämme tyylimäärityksiä Hello world! -sivulle.
+
+Lisää tyylielementti ```<style>``` HTML-dokumenttisi ```<header>```-osioon tagin sisälle. **Muista sulkevat tagit.** Kopioi alla oleva CSS-koodi alta ja liitä se tyylielementin sisään. Päivitä sivusi selaimessa ja tarkista tapahtuiko mitään. Jos ei, ja Visual Code Studio näyttää virheitä, tarkista VS Coden näyttämät virheet ja tee korjaukset sen antamien ohjeiden mukaisesti. Tämän jälkeen voit validoida sivun koodin, myös CSS-koodin, validaattorilla.
 
 ```css
 h1 {
@@ -54,22 +59,22 @@ h1 {
 }
 ```
 
-Change also color for paragraph text (use color #ccbbcc) by inserting style declarations for p elements. Refresh browser. Finally set black background for the whole document by inserting CSS rule (property background-color) for body element. Working with colors is easy in Visual Studio Code because of the built in color tool.
+Muuta samaan tapaan kappaleen (paragraph, ```<p>```) tekstin väriä (käytä vaikkapa väriä ```#ccbbcc```) käyttämällä tyylimääritystä ```<p>```-elementille. Lopuksi aseta sivun taustaväriksi musta koko dokumentille asettamalla property background-color ```<body>```-elementille. VS Code helpottaa työskentelyä värien kanssa merkittävästi koska käytettävissä on sisäänrakennettu värityökalu.
 
-## 2. Learning by reading and commenting
-Define all the different parts what are included in the following HTML snippet. Define every part of the element. Answer can be a diagram or a drawing or a list per character (or element of the element)
+## 2. Harjoittelua lukemalla ja kommentoimalla
+Kuvaile kaikki eri osat joita on mukana alla olevassa HTML–koodinpätkässä (snippet). Kuvaile jokainen elementin osa. Vastaus voi olla kaavio tai piirros tai lista elementeistä kuvauksineen.
 
 ```html
 <h1 id="heading1">This <strong>is</strong> header 1</h1>
 ```
-Learning by reading and commenting continues
-Read these document. Understand their contents and make some notes if you feel like it helps you learn.
+Lue seuraavat dokumentaatiot. Pyri ymmärtämään niiden sisältö ja tee muistiinpanoja lukemastasi.
 
-First document
-Second document
-These documents are the basis for our next lecture.
+[Ensimmäinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Glossary/HTML)
+[Toinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
 
-Still continuing
+Nämä dokumentaatiot toimivat pohjana seuraavalle luennolle.
+
+<!--- Still continuing
 Go grab a zip file for the first assignment from here. The page in question is also available here as a web page. Search for the web on how to do comments in HTML and what they are.
 
 Extract the zip to a folder to a some place convenient. Beside you existing assignments is a good place. Your job is to open the file and try and figure out what the different elements, tags and CSS rules do and comment your findings into the file. There are some comments already as an example. The contents of the page shouldn’t change. Use the head section to write a comment, on what comments are and why they are used.
@@ -93,7 +98,7 @@ Add three lower level headings (h2, contents “First chapter”, “Second Chap
 Find out how a link to a local web page (ie, web page stored in the same computer) differs from an external link. To the bottom of the page, create a link that points the file itself (as in the current file you are editing). Link text should be “To the top >>>”. Greater than signs should be produced with entities.
 
 ## 6. Comments?!
-Insert a multiline comment (which is not displayed by the browser) in the middle of the document. Comments are placed in between <!-- and --> tags: <!-- comment goes here -->.
+Insert a multiline comment (which is not displayed by the browser) in the middle of the document. 
 
 ## 7. Superscript and emphasis
 Modify h2 headings as follows: “First Chapter” becomes “1st Chapter” and so on (HINT: superscript). Do also the following:
@@ -198,4 +203,4 @@ Nira: Chrome Developer tools
 Inspecting HTML and CSS
 Do the following tutorial from MDN
 
-USE THIS FILE/LINK TO CHECK THAT YOUR ASSIGNMENTS ARE CORRECT BEFORE MOVING ONTO CSS. READY MADE EXC 16
+USE THIS FILE/LINK TO CHECK THAT YOUR ASSIGNMENTS ARE CORRECT BEFORE MOVING ONTO CSS. READY MADE EXC 16 --->
