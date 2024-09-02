@@ -9,6 +9,8 @@ HTML on kirjainyhdistelmä sanoista _**H**yper**T**ext **M**arkup **L**anguage_.
 
 Lue HTML-materiaali ennen kuin jatkat harjoituksiin.
 
+Mahtavat kiitokset Teemu Pölkille tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista.
+
 # Yleiset HTML-elementit
 Aivan perusmuotoinen HTML-sivu tarvitsee vähintään kolme pääelementtiä. ```<html>```-elementti pitää sisällään (nesting) kaksi muuta, ```<head>```ja ```<body>```-elementit. Pakollinen ```<title>```-elementti sijoitetaan ```<head>```-elementin sisään, ja kaikki käyttäjälle näkyvä sisältö sijoitetaan ```<body>```-elementin sisään. Oikeasta syntaksista on muistettava pitää huoli jotta sivu toimii oikein kaikilla alustoilla ja erilaisissa ympäristöissä. Dokumentin tyyppimääritelmässä kerrotaan dokumentin kieli ja versio. Dokumentin määritelmän tulee olla ensimmäinen rivi koko dokumentissa.
 
@@ -97,7 +99,7 @@ Lisää kolme alemman tason otsikkoa (h2, sisältö "First Chapter", "Second Cha
 ## 5. Linkkien opettelua
 Selvitä kuinka luot linkin _paikalliseen_ sivuun, eli sivuun joka sijaitsee samalla tietokoneella ja samalla nimialueella (domain). Selvitä kuinka tällainen sivun sisäinen linkki eroaa ulkoisesta linkistä.
 
-Luo sivun alaosaan linkki, joka linkittää _sivuun itseensä_ eli juuri siihen sivuun jota parhaillaan muokkaat. Laita linkin tekstiksi "To the top >>>". Suurempi kuin -merkit sisällössä tulisi tuottaa _entiteettien_ avulla jotta ne varmasti renderöityvät oikein.
+Luo sivun alaosaan linkki, joka linkittää _sivuun itseensä_ eli juuri siihen sivuun jota parhaillaan muokkaat. Laita linkin tekstiksi "To the top \>\>\>". Suurempi kuin -merkit sisällössä tulisi tuottaa _entiteettien_ avulla jotta ne varmasti renderöityvät oikein.
 
 ## 6. Kommentit
 Lisää sivutiedostoon sivun puoliväliin _useammalle riville jakautuva kommentti_ jota ei näytetä selaimessa.
@@ -115,7 +117,7 @@ Etsi sopivia, sopivan kokoisia (pieniä) kuvia sivulle. Pyri etsimään materiaa
 [Lorem Picsum](https://picsum.photos/) on hyvä sivusto joka tarjoaa "placeholder" -kuvia sivuston kehittämisen tueksi. Näiden avulla voit käyttää kuvalinkkejä, eikä näitä kuvia tarvitse tallentaa paikalliseen kansioon ellei välttämättä halua. Lisää sivulle seuraava kuva https://picsum.photos/400/200/ jota klikkaamalla pääsee Jamk:n kotisivulle. Validoi koodi.
 
 ## 9. Kuvat ja kansiorakenne
-Luo kansio nimeltä ```ìmg``` samaan kansioon jossa muokkaamasi html-tiedosto sijaitsee. Siirrä kuvatiedostot tähän uuteen kansioon ja korjaa kuvaviitteet HTML-koodissasi. Muista käyttää _suhteellista_ eikä absoluuttista linkitystapaa jotta kuvat edelleen toimivat muuallakin kuin omalla koneellasi!
+Luo kansio nimeltä ```img``` samaan kansioon jossa muokkaamasi html-tiedosto sijaitsee. Siirrä kuvatiedostot tähän uuteen kansioon ja korjaa kuvaviitteet HTML-koodissasi. Muista käyttää _suhteellista_ eikä absoluuttista linkitystapaa jotta kuvat edelleen toimivat muuallakin kuin omalla koneellasi!
 
 ## MHOO 2. Emmet-lisäosan opettelua
 Emmet on työkalu Visual Studio Codessa, ja se voi nopeuttaa kehitystyötä merkittävästi. Erityisesti jos (ja kun) käytät paljon toistuvia koodirakenteita, Emmet auttaa hommissa merkittävästi. Lue Emmetin käytöstä [Emmetin dokumentaatiossa](https://docs.emmet.io/) ja [VSCoden dokumentaatiossa.](https://code.visualstudio.com/docs/editor/emmet). Emmetin käytön opettelu helpottaa työtäsi jatkossa merkittävästi joten se on erittäin suotavaa!
@@ -128,23 +130,22 @@ Luo uusi tiedosto nimeltä ```emmet_experiment.html```ja testaa siinä työkalua
 # Listat, taulukot, ankkurit ja metaelementit
 Näihin palaamme seuraavilla luennoilla!
 
-<!---
-Lists, tables, destination anchors and meta elements
-Important information below!
+Listoilla voidaan luoda automaattisesti järjestelemättömiä listoja (bulleted, unordered lists) tai numeroituja listoja (numbered, ordered lists). Listat ovat hyödyllisiä siinä mielessä että numerointia tai listausta ei tarvitse muokata käsin jos lista muuttuu. Listaelementtejä voidaan käyttää myös valikkorakenteiden muodostamiseen.
 
-Lists allow the author of a document to generate automatically bulleted or numbered lists. An advantage of using lists over manually generating the list elements is that the list bullets or numbers don’t have to be modified manually.
+**Numeroimattomat listat** luodaan ```<ul>```-elementin sisään (ul: unordered list). Jokainen listan yksittäinen elementti tunnistetaan ```<li>```-elementin avulla. Listaelementin sisältö tulee avaavan ja sulkevan tagin sisään kuten muissakin elementeissä joissa on sisältöä. Oletusarvoinen listaelementin edessä oleva merkki on ympyrä (disc). Näitä merkkejä voi vaihtaa CSS-tyylien avulla. Järjestetty, numeroitu lista sijoitetaan ```<ol>```-tagin sisään. Esimerkkejä voit katsastaa [täältä](https://www.w3schools.com/html/html_lists.asp).  
 
-The bulleted list elements are nested within ```<ul>``` tags. Each list element is identified with opening and closing tags for ```<li>``` element. The default bullet in a bulleted is the disc. The bullets may be switched with CSS. The type of an element for a numbered list is ```<ol>```. See examples.
+**Taulukot** merkitään alkavaksi tagilla ```<table>```. Tämä määritteleee taulukon ulkoreunat. Jokainen taulukon **rivi** avataan tagilla ```<tr>``` (table row) ja suljetaan tagilla ```</tr>```. Taulukon varsinaiset solut, joihin sisältö sijoitetaan, määritetään rivitagien _sisään_ elementeillä ```<th>```ja ```<td>```. Jos soluja tarvitsee yhdistää, tämä voidaan toteuttaa attribuuteilla _rowspan_ tai _colspan_. Tarkemman kuvauksen taulukoista löydät [täältä](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics).
 
-Tables begin with ```<table>``` opening tag and that is where the existance of a border is defined. Each row must be opened and closed separately with ```<tr>``` tags. Each cell is defined with ```<th>``` and ```<td>``` elements. Should cells be combined it may be achieved with rowspan or colspan attributes. More detailed description.
+>**Taulukot ovat haastava HTML-elementti käytettäväksi.** Vaikka kovasti houkuttelisi tehdä esimerkiksi sarakkeiden tai muun sijoittelun toteutus taulukoilla, tätä ei useimmiten kannata tehdä sillä taulukot eivät käyttäydy kovin responsiivisesti, eli ne eivät mukaudu näyttölaitteen ruudun kokoon hyvin. Tästä johtuen taulukot ovat hieman ongelmallisia myös sisällöissä, mutta niillä kuitenkin toisinaan on paikkansa.
+{: .prompt-warning}
 
-Example of exercises (“Creating a site from scratch” to “Metadata”)
+Harjoitustyön pitäisi näyttää tehtävän 15. jälkeen [osapuilleen tältä](https://tiko.jamk.fi/~hsateila/files/e2-14.pdf).
 
-## 10. Lists 1: Bullets and Numbers
-Add a bulleted list and a numbered list. Add also a definition list (use appropriate elements, not ul or ol) in which you define terms HTML, CSS and JavaScript.
+## 10. Listat 1: Bulletit ja numerot
+Lisää sivulle järjestelemätön lista ja järjestetty numeroitu lista. Lisää myös listan kuvaus (käytä oikeita elementtejä, vinkkinä _kolmas_ listatyyppi, Description List, ei ul tai ol) joissa määrittelet termit HTML, CSS ja Javascript.
 
-## 11. Lists 2: Inception Boogaloo
-Add a few sublists to the bulleted list. For example
+## 11. Listat 2: Sisäkkäiset (nested) listat
+Lisää muutama alilista järjestelemättömään listaan. Esimerkiksi:
 
 ```text
 * this is the first main item
@@ -155,60 +156,68 @@ Add a few sublists to the bulleted list. For example
       * a sub item of a sub item
   * second sub item
 ```
+
 ## 12. Taulukot
 [Lue HTML-taulukoista](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics) ja lisää seuraavanlaiset taulukot sivuillesi:
 
 ![Taulukkomallit](/assets/media/tables1.png)
 
-## 13. Identifying singular elements
-Create unique ids for each heading with id attribute.
+## 13. Yksittäisten elementtien tunnistaminen
+Luo uniikit ID:t jokaiselle otsikolle käyttämällä id-attribuuttia.
 
-Just after the h1 heading insert an unordered list of links pointing to the h2 headings (ie, links to specific parts of a page). Modify the “to the top” link you created earlier in a way that it points to the h1 heading.
+Lisää järjestelemätön lista juuri h1-elementin (muista että h1-elementtejä tulee olla sivulla vain yksi) jälkeen. Lisää listaan sisällöksi jokaiseen listaelementtiin linkki saman sivun johonkin tunnistettuun h2-elementtiin. Vinkki: käytä h2:n id:tä tässä! Muokkaa aiemmin luomaasi "To the top" -linkkiä siten että se osoittaa sivun yläosan h1-otsikkoon.
 
-## 14. Hello world again??
-Insert your favourite Hello World code snippet to your document. Code snippets should be displayed without any formation - for example, the tabs and line breaks are preserved. Search the net for an appropriate element for this purpose.
+## 14. Hello World taas?
+Lisää haluamasi Hello World -koodipätkä (snippet) verkkosivullesi. Koodipätkien eli snippettien tulisi näkyä ilman mitään muotoilua - esimerkiksi tabulaattorien ja rivinvaihtojen tulee säilyä. Etsi internetista sopiva elementti tällaiseen käyttöön.
 
 ## 15. Metadata
-Insert meta elements (at least charset, author, description, keywords) to your document. Define character encoding as utf-8 (if needed) and set also the same file encoding. Add a couple of non-english characters (eg, cyrillic, greek, simplified chinese etc) to your document. View the page on your browser and make sure that your browser detects the encoding and displays all the characters correctly.
+Lisää dokumenttiisi ainakin seuraavat metaelementit: _charset_, _author_, _description_ ja _keywords_. Määritä dokumentin merkistökoodaukseksi (charset, character encoding) utf-8 ja määritä sama myös tiedoston merkistökoodaukseksi VSCodessa. Lisää dokumenttiin joitakin ei-englanninkielisiä merkkejä kuten kyrillisiä, kreikkalaisia ja yksinkertaistetun kiinan kirjoitusmerkkejä. Tarkista selaimessa että se huomioi uuden merkistökoodauksen ja näyttää kaikki merkit oikein.
 
-Grouping elements, ids and classes
-Important information below!
+# Elementtien ryhmittely, ID:t ja luokat
+```<div>```-ja ```<span>```-elementtejä käytetään ryhmittelemään elementtejä keskenään. Niillä luodaan sivulle "osioita" tai "aliosoita". Sellaisenaan nämä elementit eivät vaikuta ulkoasuun millään lailla, mutta CSS:n kanssa näillä elementeillä on erittäin tärkeä rooli sivun ulkoasun rakennuksessa. ```<div>```-elementti ryhmittelee block-muotoisia elementtejä, ja ```<span>```-elementtiä käytetään puhtaasti ryhmittelemään rivillä olevia elmenttejä (inline). Span-elementillä myös liitetään erilaisia korostustyylejä haluttuihin sisällön osiin.
 
-Div and span elements are used to group elements together to create sections or subsections of a page. Actually, they don’t have any affect the appearance but with CSS they play an important role in designing the layout of a page. Div element is used to group block-level elements whereas span is used to group inline elements only. Also, span elements are typically used to attach special styles to some parts of content.
+# HTML 5 ja semanttiset elementit
+HTML5 on web-kehityksen nykytila ja käytännön standardi. Ensimmäinen versio HTML5:sta julkaistiin lokakuussa 2014. HTML5:ssa esiteltiin paljon uusia elementtejä ja attrbuutteja, joiden avulla tuetaan paremmin merkintäkielten semanttista filosofiaa. Uusien elementtien avulla voidaan antaa monille "merkityksettömille" div-elementeille merkitys myös sivuston rakenteessa kun div-elementin sijasta käytetään semanttista elementtiä, joka teknisesti ulkoasun ja koodin suhteen käyttäytyy kuitenkin samalla tavoin kuin div-elementti. Uusia HTML5-elementtejä ovat mm.
+- header - sivuston yläosaa, osion (section) yläosa, artikkeleiden otsikko-osiot jne.
+- nav - sivuston (pää)navigaatioita varten
+- section - sivuston osioiden erotteluun (yleensä omalla otsikolla)
+- article - artikkeleille joka on järkevä kokonaisuus yksinään
+- figure - kuville, videoille, taulukoille jne. joita tarvitaan sisällön tukemiseksi, mutta voidaan siirtää kauemmas varsinaisesta asiayhteydestä jossa niihin viitataan.
+- aside - tukisisällölle joka yleensä esitetään sivun laidassa, kuten liittyvät linkit, artikkelit tai mainokset
+- footer - sivun alaosa, "jalkalista".
 
-HTML5 and semantic elements
-Important information below!
+## Lue seuraavat artikkelit
+- Mike Robinson on kirjoittanut mainion ["Let's Talk about Semantics" -artikkelin](https://html5doctor.com/lets-talk-about-semantics/) semantiikan tarkoituksesta ja kuinka elementtejä tulisi käyttää.
+- [Avoiding common HTML5 mistakes](https://html5doctor.com/avoiding-common-html5-mistakes/)
+- [HTML Element Flowchart](https://html5doctor.com/downloads/h5d-sectioning-flowchart.png) on hyvä lunttilappu semanttisten elementtien käyttöön.
 
-HTML5 is the current phase of web development. Initial version HTML5 standard was released in October 2014. HTML5 introduced a dozens of new elements and attributes which enhance semantic philosohpy behind the markup. For example, new structural elements can be used to determine different sections of a web page and therefore many “meaningless” div elements are replaced with the semantic elements. New elements include, for example, the following.
+### Seuraavat artikkelit syventävät HTML5-tietämystä
+Ei välttämätöntä paneutua näihin nyt, mutta ota kirjanmerkit talteen.
+- [Dive Into HTML5](https://diveinto.html5doctor.com/)
+- [HTML5 for Web Designers](https://html5forwebdesigners.com/)
 
-header - for page headers, section headers, article headers and such.
-nav - for major navigational elements.
-section - for sections of the page (usually with a heading).
-article - for content that makes sense on its own (eg, news and blog entry).
-figure - for images, videos, tables and such which are required in order to understand the content but can be moved away from the primary content.
-aside - for support content on a page such as related links and ads.
-footer - for footer information at the bottom of other elements
-Read Mike Robinson’s article “Let’s Talk about Semantics” to get an idea where to use new elements. Read also Avoiding common HTML5 mistakes. HTML5 Element Flowchart is a handy cheatsheet to start with.
+## 16. Merkityksen lisääminen tageihin
+Lisää sivun yläosaan leveä, bannerimainen (leveä ja matala) kuva. Tätä varten ei tarvitse opetella PhotoShopia tai GIMPiä tai mitään muutakaan grafiikan luontiin tarkoitettua työkalua tässä kohdin, sillä voit generoida sopivan bannerin online-työkaluilla. Tästä esimerkkinä vaikkapa [Canva](https://canva.com/). Ryhmittele bannerikuva ja pääotsikko semanttisesti oikein sopivilla elementeillä dokumentissasi.
 
-Take your time and read through the following links to get a better picture of HTML5: Dive Into HTML5, HTML5 For Web Designers and HTML-5-tutorial.
+Lisää semanttisesti oikea HTML-elementti, jonka sisällä on linkkilista, ja ryhmittele loput elementit yhteen. Luo uusi, semanttisesti oikea HTML-elementti sivun loppuun, johon sijoitat Copyright-tiedot, kuten "©Copyright by XXX"
 
-## 16. Adding meaning to the tags
-Place a wide banner-like (wide and flat) image atop of the page. You don’t have to study PhotoShop, GIMP or any other graphic processing software at this point since you can easily create a banner with online tools, for example Banner Fans is pretty good. Group the banner image and the main header with a semantically correct HTML element.
+Nyt sinulla pitäisi olla dokumentti missä _juurielementti_ (html) koostuu neljästä semanttisesta elementistä (katso [esimerkki](https://tiko.jamk.fi/~hsateila/files/ex15_divs.pdf)).
 
-Insert a semantically correct HTML element to nest the list of links and group the rest of the elements together. Create to the bottom of the page a new semantically correct HTML in which you put copyright information, such as “© copyright by XY”.
+Päivitä selain. Mitään ei näyttäisi tapahtuvan? Tarkista sivun osiot (sections) selaimen kehittäjätyökaluilla (Web developer tools, aukenee joko valikoiden kautta tai näppäinyhdistelmällä ctrl+shift+I Windowsissa tai Command+Option+I macOS:ssa). Jotta nämä lisäämäsi osiot näkyvät selaimessa normaalistikin, niihin on lisättävä tyylejä CSS:n avulla, ja siihen menemme seuraavaksi.
 
-Now you should have a document in which the root element (html) consists of four semantic elements (see an example). Refresh your browser. Nothing seems to happen, right? Check the sections of the page with the browsers web developer tools. In order to see those sections in a browser without extensions we need to define some styles (don’t worry, we will be pretty soon there).
+## MHOO 3. Selaimen kehittäjätyökalut ja HTML:n vianselvitys (debuggaus)
+>
+Vaikka tämä osio onkin vapaaehtoinen, **on erittäin suositeltavaa tutustua** alla olevien artikkeleiden avulla kehitystyökaluihin. Ne ovat web-kehittäjän tärkeimpiä työkaluja.
+{: .prompt-warning}
 
-## MHOO 3. Developer tools and debugging HTML
-Read a few tutorials and articles about Developer Tools built into different web browsers.
+Lue muutama tutoriaali ja artikkeli kehitystyökaluista, jotka on sisäänrakennettu jokaiseen selaimeen ja joita tulemme jatkossa tarvitsemaan paljon.
 
-EVEN THOUGH THIS IS MHOO, ITS HIGHLY RECOMMENDED YOU DO THIS EXERCISE
+- [What are devtools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools) (voit lopettaa JavaScript-osioon tässä yhteydessä)
+- [Nira: Chrome Developer Tools](https://nira.com/chrome-developer-tools/)
+- [Inspecting HTML and CSS](https://developer.chrome.com/docs/devtools/dom/)
+- Tee seuraavat [tutoriaalit MDN:stä](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML).
 
-Read these:
-
-What are devtools (You can stop at the JavaScript part)
-Nira: Chrome Developer tools
-Inspecting HTML and CSS
-Do the following tutorial from MDN
-
-USE THIS FILE/LINK TO CHECK THAT YOUR ASSIGNMENTS ARE CORRECT BEFORE MOVING ONTO CSS. READY MADE EXC 16 --->
+Tästä linkistä näet miltä sivun pitäisi suurin piirtein näyttää. Tarkista luomuksesi sen kanssa ennen kuin jatkat CSS-hommien pariin: [Valmis sivu tehtävän 16 jälkeen](https://tiko.jamk.fi/~hsateila/exc16.html). 
+>
+Loppuvinkki: **Ctrl+Shift+u** (Chrome, Windows) tai **Command+Option+u** (Chrome, macOS) näyttää selaimessa sivun lähdekoodin.
+{: .prompt-info}
