@@ -74,53 +74,60 @@ Lue seuraavat dokumentaatiot. Pyri ymmärtämään niiden sisältö ja tee muist
 
 Nämä dokumentaatiot toimivat pohjana seuraavalle luennolle.
 
-<!--- Still continuing
-Go grab a zip file for the first assignment from here. The page in question is also available here as a web page. Search for the web on how to do comments in HTML and what they are.
+## Jatketaan tehtävien parissa!
+Nouda zip-tiedosto tehtäviä varten [täältä](https://tiko.jamk.fi/~hsateila/files/exc1.zip). Tiedostoista muodostuvan nettisivun voi nähdä myös nettisivuna [täällä](https://tiko.jamk.fi/~polkte/webui/assets/samples/exc1/index.html). **Selvitä ja hae [MDN-dokumentaatiosta](https://developer.mozilla.org/en-US/) miten HTML-koodiin tehdään _kommentteja_.**
 
-Extract the zip to a folder to a some place convenient. Beside you existing assignments is a good place. Your job is to open the file and try and figure out what the different elements, tags and CSS rules do and comment your findings into the file. There are some comments already as an example. The contents of the page shouldn’t change. Use the head section to write a comment, on what comments are and why they are used.
+Pura zip-tiedosto sopivaan paikkaan, esimerkiksi aiemmin tekemääsi opintojaksokansioon. Tehtäväsi on avata tiedosto ja selvittää mitä eri elementit, tagit ja CSS-säännöt tekevät ja kommentoida selvityksen tulos lyhyesti suoraan tiedostoon. Mukana on jo esimerkin omaisesti muutama kommentti. Itse sivun sisällön _EI_ tulisi muuttua. Kirjoita ```<head>```-osioon kommentti jossa kerrot mitä kommentit ovat ja miksi niitä käytetään.
 
-MHOO 1. (Mä Haluan Oppia ja Osata) Browsers
-Take a peek and find out what difference there are between different browser engines and browsers. What engines run on what browsers and what browsers run on different platforms (Mobile, tablet, consoles, Windows, macOS, Linux).
+## MHOO 1. (Minä Haluan Oppia ja Osata): Selaimet
+Selvitä useimmin käytetyt selaimet ja erityisesti selainmoottorit (engine) joita nämä selaimet käyttävät. Mitä moottoreita selaimet käyttävät milläkin eri alustoilla (mobiili, tablet, konsolit, Windows, macOS, Linux)?
 
-Can the browser engine in question change how the web page is drawn?
+Voiko selaimen moottori vaikuttaa sivun ulkoasuun?
 
-Take notes, and return those notes.
+Tee muistiinpanot itsellesi!
 
-## 3. Creating a site from scratch
-Lets start over by creating a very basic HTML 5 webpage from scratch (you have read the introduction to HTML, right?). Example of the page after exercise 9. First, add doctype and all the required structural elements (html, head, etc). Then add a main heading (h1, content “Basic Web Page”) and a couple of text paragraphs (you can easily produce dummy text with lorem ipsum generator) or with Emmet!.
+## 3. Verkkosivun luominen tyhjästä
+Aloitetaan alusta luomalla perusmuotoinen HTML5 -verkkosivu tyhjästä. Tähän sinulla pitäisi jo edellisten perusteella ollakin mallipohja, mutta jos ei, tarkista perusteet [MDN:stä](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics). Harjoitusten 2-8 jälkeen sivun tulisi näyttää [tältä](https://tiko.jamk.fi/~hsateila/files/2-8.png) Ensimmäiseksi, lisää tyhjään dokumenttiin doctype ja kaikki tarvittavat rakenteelliset elementit (html, head, jne). Seuraavaksi lisää sivun pääotsikko (h1, ja sisällöksi "Basic Web Page") ja pari tekstikappaletta (elementti p). Voit generoida niin sanotuksi placeholder-tekstiksi munkkilatinaa helposti joko [lorem ipsum -generaattorilla](https://loremgenerator.io/) tai [Emmet-lisäosalla](https://docs.emmet.io/abbreviations/lorem-ipsum/).
 
-Validate your webpage. If errors occur, fix them one by one and revalidate the document after each correction.
+Validoi verkkosivukoodisi W3C-validaattorilla johon löydät linkin ylempää. Jos saat virheitä, korjaa ne yksi kerrallaan ja validoi sivu uudelleen kunnes validointi menee läpi.
 
-## 4. Adding headers
-Add three lower level headings (h2, contents “First chapter”, “Second Chapter” and “Third Chapter”) and a few text paragraphs after each heading. Place a link to a website of your choice inside any of the paragraphs. Validate.
+## 4. Otsikoiden lisääminen
+Lisää kolme alemman tason otsikkoa (h2, sisältö "First Chapter", "Second Chapter" ja "Third Chapter") ja lisää pari tekstikappaletta kunkin otsikon jälkeen. Lisää vapaavalintainen linkki jollekin sivulle jonkin kappaleen tekstin sisään. Validoi sivu.
 
-## 5. Learning to link
-Find out how a link to a local web page (ie, web page stored in the same computer) differs from an external link. To the bottom of the page, create a link that points the file itself (as in the current file you are editing). Link text should be “To the top >>>”. Greater than signs should be produced with entities.
+## 5. Linkkien opettelua
+Selvitä kuinka luot linkin _paikalliseen_ sivuun, eli sivuun joka sijaitsee samalla tietokoneella ja samalla nimialueella (domain). Selvitä kuinka tällainen sivun sisäinen linkki eroaa ulkoisesta linkistä.
 
-## 6. Comments?!
-Insert a multiline comment (which is not displayed by the browser) in the middle of the document. 
+Luo sivun alaosaan linkki, joka linkittää _sivuun itseensä_ eli juuri siihen sivuun jota parhaillaan muokkaat. Laita linkin tekstiksi "To the top >>>". Suurempi kuin -merkit sisällössä tulisi tuottaa _entiteettien_ avulla jotta ne varmasti renderöityvät oikein.
 
-## 7. Superscript and emphasis
-Modify h2 headings as follows: “First Chapter” becomes “1st Chapter” and so on (HINT: superscript). Do also the following:
+## 6. Kommentit
+Lisää sivutiedostoon sivun puoliväliin _useammalle riville jakautuva kommentti_ jota ei näytetä selaimessa.
 
-Add a subscript element somewhere in the document (see third chapter in the example).
-Read about semantics concerning i, b, strong and em elements. Use appropriate elements to emphasize a few words.
-## 8. Imagine images
-Search for a nice small image (images you are allowed to use - not copyrighted material, for example, images licenced under Creative Commons are good), save it into the same folder in which your web page resides and include the image into the document.
+## 7. Ylätunniste (superscript), alatunniste (subscript) ja tekstin painottaminen
+Muokkaa h2-otsikoita siten että "First Chapter" on muokkauksen jälkeen "1^st^ Chapter". Tee myös seuraavat muutokset:
 
-Lorempixel and Lorem picsum are websites that provides “placeholder” pictures for your website without needing to save them locally. Add an image with the following address to your page: https://picsum.photos/400/200/ that links to the JAMK homepage. Validate.
+Lisää alatunniste-esimerkki jonnekin dokumenttiin (katso esimerkkikuvan kappale kolme).
 
-## 9. Pictures and folder structure
-Create a folder pics under the folder where the html file resides. Move the image file to the pics folder and correct the references in your code. Use relative references, not absolute.
+Lue elementtien ```<i>```, ```<b>``` ja ```<strong>```_semantiikasta_. Käytä sopivia elementtejä painottamaan joitakin sanoja.
 
-## MHOO 2. Learning emmet
-Emmet is a tool built in to the Visual Studio Code and it can speed up development by quite a bit. Especially if you are creating recurring patterns. Read up about Emmet and how to use it on the Emmet docs and VSCode docs.
+## 8. Kuvia sivulle
+Etsi sopivia, sopivan kokoisia (pieniä) kuvia sivulle. Pyri etsimään materiaalia jota saat luvallisesti käyttää: [kuvat jotka on lisensoitu Creative Commons -lisenssillä](https://search.creativecommons.org/) ovat oikein hyviä tähän. Tallenna kuvatiedosto samaan kansioon jossa muokattavana oleva verkkosivutiedosto on, ja lisää kuva sivulle img-tagin avulla. Tarkista dokumentaatiosta (MDN) miten img-tagia tulee käyttää.
 
-Create a new file, called emmet_experiment.html and start experimenting on the tool. Use Emmet in all the following tasks. Use the view source on this page to see what the end result should look like.
+[Lorem Picsum](https://picsum.photos/) on hyvä sivusto joka tarjoaa "placeholder" -kuvia sivuston kehittämisen tueksi. Näiden avulla voit käyttää kuvalinkkejä, eikä näitä kuvia tarvitse tallentaa paikalliseen kansioon ellei välttämättä halua. Lisää sivulle seuraava kuva https://picsum.photos/400/200/ jota klikkaamalla pääsee Jamk:n kotisivulle. Validoi koodi.
 
-Create the basic structure for HTML document with only one character
-In the HTML body, create a div with h1 element in it. h1 element should have “Hello Emmet!” as its content
-Inside the div element you just created, underneath the h2 create three section elements, which all have h2 and a two p elements inside them. One of the two p elements should have a element inside it, with a class named outbound. For added difficulty, use the inbuilt “lorem” command to add content to the p elements when creating them.
+## 9. Kuvat ja kansiorakenne
+Luo kansio nimeltä ```ìmg``` samaan kansioon jossa muokkaamasi html-tiedosto sijaitsee. Siirrä kuvatiedostot tähän uuteen kansioon ja korjaa kuvaviitteet HTML-koodissasi. Muista käyttää _suhteellista_ eikä absoluuttista linkitystapaa jotta kuvat edelleen toimivat muuallakin kuin omalla koneellasi!
+
+## MHOO 2. Emmet-lisäosan opettelua
+Emmet on työkalu Visual Studio Codessa, ja se voi nopeuttaa kehitystyötä merkittävästi. Erityisesti jos (ja kun) käytät paljon toistuvia koodirakenteita, Emmet auttaa hommissa merkittävästi. Lue Emmetin käytöstä [Emmetin dokumentaatiossa](https://docs.emmet.io/) ja [VSCoden dokumentaatiossa.](https://code.visualstudio.com/docs/editor/emmet). Emmetin käytön opettelu helpottaa työtäsi jatkossa merkittävästi joten se on erittäin suotavaa!
+
+Luo uusi tiedosto nimeltä ```emmet_experiment.html```ja testaa siinä työkalua. Käytä Emmetiä kaikissa seuraavissa tehtävissä. [Tältä sivulta](https://tiko.jamk.fi/~hsateila/emmet_exc.html) voit tarkistaa miltä alla olevan kolmen tehtävän lopputuloksen tulisi näyttää.
+1. Luo HTML-sivun perusrakenne VSCode-editorissa käyttäen vain yhtä merkkiä
+2. HTML body -tagin sisällä: luo ```<div>``` jossa on yksi ```<h1>```sisällä. ```<h1>```pitäisi olla "Hello Emmet!" -teksti sisältönä.
+3. Luomasi ```<div>``` -elementin sisällä, ```<h2>``` -elementin alle, luo kolme ```<section>```-elementtiä, joissa kaikissa on sisällä ```<h2>```-elementti sisällä ja näiden kaikkien sisällä kaksi ```<p>```-elementtiä. Yhdessä ```<p>``` -elementeistä tulisi olla luokka (class) nimeltä "outbound". Lisähaasteena, käytä sisäänrakennettua "lorem" -komentoa tuottaaksesi sisältöä ```<p>```-elementtien sisään luodessasi niitä.
+
+# Listat, taulukot, ankkurit ja metaelementit
+Näihin palaamme seuraavilla luennoilla!
+<!---
 Lists, tables, destination anchors and meta elements
 Important information below!
 
