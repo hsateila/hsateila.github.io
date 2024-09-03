@@ -105,7 +105,7 @@ Luo sivun alaosaan linkki, joka linkittää _sivuun itseensä_ eli juuri siihen 
 Lisää sivutiedostoon sivun puoliväliin _useammalle riville jakautuva kommentti_ jota ei näytetä selaimessa.
 
 ## 7. Ylätunniste (superscript), alatunniste (subscript) ja tekstin painottaminen
-Muokkaa h2-otsikoita siten että "First Chapter" on muokkauksen jälkeen "1^st^ Chapter". Tee myös seuraavat muutokset:
+Muokkaa h2-otsikoita siten että "First Chapter" on muokkauksen jälkeen "1<sup>st</sup> Chapter". Tee myös seuraavat muutokset:
 
 Lisää alatunniste-esimerkki jonnekin dokumenttiin (katso esimerkkikuvan kappale kolme).
 
