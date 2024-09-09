@@ -64,49 +64,147 @@ Määritä fonttien värit kappaleille ja otsikoille.
 
 Jotta homma helpottuu, yllä olevat termit englanniksi ovat _id_, _class_ ja _contextual selector_.
 
+**```id```-attribuuttia** käytetään _yksilöllisesti_ tunnistamaan mikä tahansa elementti html-dokumentissa. Elementin yksilöllinen tunnistaminen tarkoittaa sitä että sivulla voi olla _vain ja ainoastaan_ yksi id sille annetulla nimellä. Tunniste on ns. _case sensitive_, eli isoilla ja pienillä kirjaimilla on ero. _tunniste_ ja _Tunniste_ ovat siis kaksi erilaista yksilöivää tunnistetta. Tunnisteen nimen voi valita vapaasti mutta se ei voi sisältää välimerkkejä eikä erikoismerkkejä (eikä oikeastaan ääkkösiäkään...).
+
+Yksilöllinen tunniste mahdollistaa tyylimäärityksen tekemisen nimenomaan tähän valikoituun elementtiin eikä tämä tyylimääritys vaikuta muualle. Id merkitään CSS-koodissa risuaidalla (hash) #. Esimerkkinä seuraavassa on määritelty tunniste HTML-koodissa, ja sen jälkeen tunnistetta käytetään CSS-koodissa:
+
+```html
+<div id="hero"></div>
+<img id="big-logo">
+```
+```css
+#hero {
+    color: black;
+}
+#big-logo {
+    width: 100%;
+}
+```
+
+**```class```-attribuuttia** (luokka) käytetään määrittelemään tyylejä elementtiluokalle. Yhdessä luokassa voi olla useampia elementtejä joille tyylit määritellään. Tämä tarkoittaa siis sitä että HTML-dokumentissa voi esiintyä useampi kuin yksi elementti samannimisellä class-attribuutilla. Elementti voi myös kuulua useampaan kuin yhteen luokkaan, eli sillä voi olla useampia class-attribuutteja. CSS-koodissa luokan merkitsevä merkki on piste ```.```. Esimerkkinä jälleen ensin HTML-koodi jossa luokkia käytetään, ja tämän jälkeen CSS jossa elementeille määritellään tyyli sen luokka-attribuutin perusteella:
+
+```html
+<h1 class="red">Otsikkoteksti</h1>
+<p class="red">Kappaleteksti.</p>
+```
+```css
+.red {
+    color: red;
+}
+```
+
+Yksilöllisen tunnisteen (id) ja luokkatunnisteen (class) lisäksi voidaan käyttää niin sanottua **kontekstisidonnaista valitsinta (contextual selector)** CSS-koodissa löytämään oikea elementti HTML-dokumentista. Nämä valitsimet voivat olla monimutkaisiakin, ja on tarpeen ymmärtää jotakin [HTML-dokumentin rakennemallista (Document Object Model, DOM)](https://www.w3schools.com/js/js_htmldom.asp) jotta käyttö onnistuu oikein. Kontekstisidonnaisuus tarkoittaa siis sitä että elementti löydetään sen perusteella mitä sen lähistöllä sijaitsee.
+
+Sisäkkäiset elementtirakenteet (nested elements): Ulompaa elementtia kutsutaan sisemmän elementin enlanniksi termillä _parent_. Suomeksi tämä voisi kääntyä _vanhempi_ tai _isäntäobjekti_. Sisempi elementti taas on vastaavasti _child_ eli lapsi. Saman _vanhemman_ _lapset_ ovat luonnollisesti _sisaruksia_ (_siblings_) keskenään ja lapset ovat vanhempansa _jälkeläisiä_ (_descendants_). Kaksi vierekkäistä sisarusta ovat keskenään _adjacent siblings_.
+
+CSS-valitsimilla voidaan rakentaa varsin monimutkaisia kombinaatioita sen mukaan mihin tyylejä halutaan lisätä. Lisää CSS-selectoreista voi lukea [täältä](https://www.sitepoint.com/css-selectors/).
+
+**Valitsin ```a b c```** valitsee elementit ```c```jotka ovat elementin ```b```jälkeläisiä, jotka taas ovat elementin ```a```jälkeläisiä. Seuraavassa jälleen esimerkki HTML-koodista, jonka jälkeen CSS tällä valitsimella johon tyyli kohdistetaan. Ensin etsitään div-elementti jonka luokka on "copy", ja sen sisältä elementti h1 jossa on sisällä jälkeläisenä elementti em. Jos tällaisia löytyy useampia, tyyli vaikuttaa kaikkiin.
+
+```html
+<div class="copy">
+    <h1>Otsikko <em>jossa</em> on tekstiä</h1>
+</div>
+```
+```css
+div.copy h1 em {
+    color: red;
+}
+```
+
+**Valitsin ```*```** on niin sanottu villi kortti. Valitsin ```a * b```osuu kaikkiin ```b```-elementteihin jotka ovat elementin ```a```jälkeläisiä riippumatta siitä mikä elementti on elementin ```b```vanhempi.
+
+```css
+div.copy * em {
+    color: red;
+}
+```
+
+**Valitsin ```>```** valitsee kaikki elementin suorat jälkeläiset. ```a > b``` valitsee kaikki ```b```-elementit jotka ovat ```a```:n välittömiä jälkeläisiä.
+
+```css
+div.copy > p > em {
+    color: red;
+}
+```
+
+**Valitsin ```+```** valitsee viereisen sisaruksen. Esimerkissä ```a + b```valitaan b jos se on sisaruksena heti a:n jälkeen dokumentissa.
+
+```css
+p + p em {
+    color: red;
+}
+```
+
+**Valitsin ```~```valitsee yleisesti ```b```:n jos se vain ylipäätänsä sijaitsee ```a```:n jälkeen: ```a ~ b````
+
+```css
+p + p em {
+    color: red;
+}
+```
+
+Esimerkkejä miltä sivuston pitäisi suurin piirtein näyttää harjoituksen 35 jälkeen: [Kuva 1](https://tiko.jamk.fi/~hsateila/assets/media/ex35_1.png), [Kuva 2](https://tiko.jamk.fi/~hsateila/assets/media/ex35_2.png), [Kuva 3](https://tiko.jamk.fi/~hsateila/assets/media/ex35_3.png).
+
+## 24. Lisää semantiikkaa
+Jos ei jo ole, niin nyt käytä elementtejä nav, header ja footer erottamaan sivuston nämä osiot. ```<header>```-elementin tulisi sisältää banneri ja pääotsikko, ```<nav>```sisältää linkkilistan ja ```<footer>```copyright-tiedot. Käytä div-elementtiä id:llä _content_ erottamaan toisen tason otsikot ja kappaleet muusta sisällöstä.
+
+## 25. Tausta navigaatiolle
+Etsi jälleen sopiva taustakuva ja aseta se taustaksi ```<nav>```-osiolle. Asettele tämä taustakuva nav-elementin oikeaan yläkulmaan.
+
+## 26. Lisää spannia
+Oletettakoon että haluat vahvistaa joitakin sanoja tai lauseita (esimerkiksi varoituksia) dokumentissasi, mutta **boldauksen** tai _italicin_ sijaan haluat tehdä niistä punaisia.
+
+Valitse dokumentistasi muutamia sanoja ja merkitse ne ```<span>```-elementillä. Virkistä sivu ja huomaat mahdollisesti että sinulla on ongelma. Voit ratkaista sen esimerkiksi luomalla luokat _dropcap_ ja _warning_ ja määritellä span-elementeille nämä luokat niille kuuluviin paikkoihin ja muokkaamalla tyylimäärityksiä siten että nämä kohdistuvat vain niihin span-elementteihin joilla on kyseinen luokka.
+
+## 27. Container-elementit
+
+### Osa 1.
+Laita koko sisältö (heti alun body-tagin jälkeen ja juuri ennen sulkevaa body-tagia) uusi div-elementti. Kääritään siis koko sisältö uuden div-elementin sisään. Tällaista container-elementtiä yleensä käytetään käärimään koko sisältö sisäänsä body-elementin sisässä. Mutta miksi?
+
+### Osa 2.
+Aseta CSS-tyylissä luomallesi containerille kiinteä leveys (poista tämä määritys body-elementiltä) ja sijoita se vaakatasossa selainikkunan keskelle (poista myös marginaalit body-elementiltä). Huomaa että sisällön pitäisi pysyä selaimen keskiosassa riippumatta siitä minkä levyinen itse selainikkuna on.
+
+### Osa 3.
+Kommentoi CSS:ssä (CSS-kommentit merkitään /* ja */ sisään) ```background-repeat: repeat-y;```määritys body-elementiltä ja aseta taustaväri sen sijaan container diville.
+
+## MHOO 5. BEM (Block, Element Modifier)
+Tutustu BEM:n [tällä videolla](https://www.youtube.com/watch?v=er1JEDuPbZQ) ja lukemalla [tämä dokumentaatio](https://en.bem.info/methodology/quick-start/).
+
+# Reunaviivat (borders) ja täytteet (paddings)
+
+Reunaviivan tyyli, leveys ja väri voidaan määritellä tyylissä joko samalla kertaa tai erillisinä parametreina. On olemassa valmiita reunaviivatyyppejä, kuten solid, dotted jne. Jos halutaan erilaisia värejä tai leveyksiä, tarvitaan niitä varten oma tyylimäärityksensä.
+
+Kun elementti tarvitsee tilaa ympärilleen sekä ulko- että sisäpuolelle, käytetään määrittelyparametreja margin (marginaali) ja padding (täyte). Oletusarvot marginaalille ja täytteelle vaihtelevat selainkohtaisesti, ja ovat erilaisia kullekin elementille. Tästä johtuen on suositeltavaa asettaa nämä parametrit joka tapauskessa, jotta ulkoasu pysyy yhtenäisenä kaikissa selaimissa.
+
+Ymmärtääksesi margin- ja padding-parametrit hyvin, sinun täytyy tuntea [CSS:n laatikkomalli eli CSS Box Model](https://www.w3schools.com/Css/css_boxmodel.asp).
+
+## 28. Reunaviivat ja täytteet
+Aseta 1px kiiteä reunaviiva container-diville. Lisää myös padding samaan containeriin jotta saat sivulle hieman lisää ilmavuutta.
+
+Mikä on nyt container divin todellinen leveys? Hyödynnä selaintyökaluja tämän selvittämiseksi!
+
+## 29. Taulukot 2.
+Muokkaa dokumentissasi olevia taulukoita seuraavasti:
+- Lisää [```<caption>```-elementti](http://www.w3schools.com/tags/tag_caption.asp) jokaiselle taulukolle.
+- Aseta jokaiselle taulukolle oma taustakuva
+- Aseta taulukon taustaväri erikseen sekä parittomille että parillisille riveille
+- Pienennä caption-tekstin kokoa (käytä prosenttia yksikkönä, esimerkiksi 75%)
+- Tyylittele caption-teksti haluamallasi tavalla
+- Siirrä caption-teksti taulukon alaosaan
+- aseta marginaalit siten että captionin ylä- ja alapuolella on yhden rivin verran tilaa.
+
+## 30. Lisää reunaviivoja
+Ympäröi tekstikappaleet kiinteällä 4 pikselin reunaviivalla (```solid 4px border```). "Sisennä" kappaleet siten että asetat vaaleamman värin yläreunaan ja vajostava värisivuille sekä tummempi alareunaan.
+
+Aseta padding sellaiseksi että se on kaksi kertaa fontin koko vasemmassa ja oikeassa reunassa, ja 1x juurielementin fonttikokoa vastaava padding kappaleiden ylä- ja alaosaan. Käytä [lyhennettyjä parametreja](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) marginille ja paddingille.
+
+## 31. Linkkejä pisterajauksella
+Anna kaikille niille kuville, jotka ovat linkkejä, pistereunaviiva (dotted border). Jos olet edennyt harjoituksen mukaan, näitä kuvia on vain yksi. Käytä kuitenkin yleistä parametria valitsemalla jälkeläinen. Jätä kuvan ja reunaviivan hieman tilaa sekä sisä- että ulkopuolelle (margin, ja padding).
+
 <!--
 
-IDs, classes and contextual selectors
-Important information below!
 
-The id attribute is used to uniquely identify any element within a page. Identifying an element enables you to create styles and scripts specific to that element. The value of the id attribute can be chosen at will and each value can appear only once in a document. Ids are specified with hash marks in CSS. For example, HTML: <div id="hero"> or <img id="big-logo">, CSS: #hero {color: black;} or #big-logo {width: 100%;}
-
-Class attribute is used to specify that an element belongs to a class of elements. One class can contain many elements - actually different kind of elements can belong to the same class. An element can belong to more than one group. Classes are marked with a dot in CSS. For example, HTML: <h1 class="red">Header</h1><p class="red">Some text</p><h1 class="red">Second header</h1>, CSS: .red {color: red;}
-
-Moreover, contextual selectors can be used for selective styling. In order to use the following selectors you have to understand the document object model (DOM). In a nested tag set, the outer element is called the parent and the inner element is the child. The child element and any children of that child are the parents’ descendants. Two elements in the same parent are called siblings, and two elements immediately next to each other are adjacent siblings.
-
-a b c == descendent (c descendent of b descendent of a) / div.copy h1 em {color:red;}
-a * b == universal (b within a regardless of b’s parents) / div.copy * em {color:red;}
-a > b == direct child (b direct child of a) / div.copy > p > em {color:red;}
-a + b == adjacent sibling (sibling b immediately after a) / p + p em {color:red;}
-a ~ b == general sibling (sibling b anywhere after a) / p ~ p em {color:red;}
-See an example. More examples.
-
-Examples of exercises after exercise 35 (image 1, image 2 and image 3).
-
-24. Semantics once again
-If you haven’t already, use HTML5 elements nav, header and footer to signify those parts of the page. Header should contain the banner and main heading, nav contains the list of links and footer contains copyright information. Use a div with id content which contains the second level headings and paragraphs and all the other stuff.
-
-25. Background for navigation
-Search another nice background image and set it as a background image for the nav section. Position that background image to the top right corner of the nav element.
-
-26. Spanners spanners
-Let’s suppose that you want to emphasize certain words or sentences (for example, warnings) in your document but instead of bolding or italicizing them you want them to appear red. Select a couple of words and mark them with span element. Refresh. As you can see, you have a small problem. Solve it by creating a couple of classes: class dropcap contains style declarations for the drop caps and class “warning” contains a style declaration for displaying an element with red color. After creating CSS classes, modify your HTML document in the corresponding way.
-
-27. Containers
-Part 1.
-Wrap the whole content (from the body start tag to the body end tag) within a new div element. Name it as container. This container div is typically added to nest body elements when writing a HTML document. Why?
-
-Part 2.
-Set a fixed width for the container div (remove width declaration from body element) and position it horizontally in the middle of the browser window (remove also margin declarations from body element). Note that the page should be in the middle no matter what the browser window width is.
-
-Part 3.
-Comment out (CSS uses /* and */ syntax for comments) the background-repeat: repeat-y declaration (body element) and set background color for the container div.
-
-MHOO 5. BEM
-Get to know BEM by watching this video and reading this documentation.
-
-Grab the website at ./bem.html and convert it to use BEM.
 
 Borders and paddings
 Important information below!
