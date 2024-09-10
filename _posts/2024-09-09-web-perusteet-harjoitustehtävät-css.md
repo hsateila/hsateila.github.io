@@ -4,6 +4,8 @@ title: 'Web-perusteet: Harjoitustehtävät, CSS'
 date: 2024-09-09 15:01 +0300
 categories: [Opintojaksot, Web-perusteet]
 ---
+_Mahtavat kiitokset Teemu Pölkille tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista._
+
 # CSS: käyttö
 
 Cascading Style Sheets eli CSS-tyylit tarjoavat verkkodokumentin julkaisijalle mahdollisuuden hallita julkaisun ulkoasua hyvin tarkasti. Näitä tyylimäärittelyitä voidaan käyttää myös muualal kuin verkkosivuilla. Tyylien käyttämiseksi tarvitaan kuitenkin toimiva HTML-syntaksi ja rakenne kun sitä käytetään verkkosivuston ulkoasun rakentamiseen.
@@ -202,85 +204,60 @@ Aseta padding sellaiseksi että se on kaksi kertaa fontin koko vasemmassa ja oik
 ## 31. Linkkejä pisterajauksella
 Anna kaikille niille kuville, jotka ovat linkkejä, pistereunaviiva (dotted border). Jos olet edennyt harjoituksen mukaan, näitä kuvia on vain yksi. Käytä kuitenkin yleistä parametria valitsemalla jälkeläinen. Jätä kuvan ja reunaviivan hieman tilaa sekä sisä- että ulkopuolelle (margin, ja padding).
 
-<!--
+# Pseudoluokat
+Monilla HTML-elementeillä on niihin liittyviä erikoistiloja. Esimerkiksi linkki voi olla neljässä tilassa jotka kaikki voi tyylitellä yksilöllisesti. [Pseudoluokka](https://www.w3schools.com/css/css_pseudo_classes.asp) on valmiiksi määritelty tila tai elementin käyttötapaus joka voidaan tyylitellä erikseen.
 
+**Linkit:** pseudoluokkia käytetään tyylittelemään linkin normaali tila, se miltä linkki näyttää kun siellä on jo vierailtu (visited), miltä linkki näyttää silloin kun sen päälle viedään hiiren kursori (hover) ja miltä linkki näyttää silloin kun käyttäjä klikkaa linkkiä
 
+**Dynaamiset pseudoluokat:** Pseudoluokan voi lisätä mihin tahansa elementtiin kun määritellään esimerkiksi sitä miltä elementti näyttää kun sen päälle viedään hiiri, sitä klikataan tai se on valittu.
 
-Borders and paddings
-Important information below!
+**Rakenteelliset pseudoluokat:** pseudoluokat muistuttavat rakenteeltaan yhdistelmävalitsimia kun valitaan elementtien sisaruksia, mutta sallivat elementtien tyylittelyn joka perustuu joko täsmällisesti annettuun tai laskettuun sijaintiin. [Rakenteellisen pseudoluokan](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes) avulla voi muodostaa selectorin jolla päästään käsiksi HTML-elementteihin rakenteessa käyttämällä vaikkapa pseudoluokkaa ```:last-child```, joka valitsee elementin viimeisen jälkeläisen.
 
-Border style, width and color may be set simultaneously or with separate parameters. There are different border types (solid, dotted, etc) available. If separate colors or widths are desired then separate declarations are required.
+## 32. Linkit pseudoluokilla
+Lisää tyylimääritykset dokumentin linkeille. Varmista että määrittelet seuraavat pseudoluokat:
 
-When an element should have space within and outside the element, both margin and padding values ought to be set. The default margin and padding values may differ in various browsers. This is why it is recommended to define these values even though it might seem obsolete. To fully understand margins and paddings you should take a look at the CSS Box model link which can be found at the material folder.
+- link
+- active
+- hover
+- focus
+- visited
 
-28. Borders & Paddings
-Set 1px solid border for the container div. Also, add some padding to the container to give it a bit more air.
+## 33. Pseudoluokka kuviin
+Aiemmin lisäsit pisteviivan niihin kuviin jotka toimivat myös linkkinä. Lisää nyt hover -pseudoluokka joka muuttaa pistereunaviivat kiinteiksi reunaviivoiksi ja näyttää reunaviivan pelkästään ylä- ja alareunassa kun käyttäjä vie hiiren kuvan päälle.
 
-What is the actual width of the container div now? Use your browsers developer tools to find out!
+## 34. Rakenteelliset pseudoluokat
 
-29. Tables 2: Electric Boogaloo!
-Modify tables in the following way:
+Lisää [rakenteellinen pseudoluokka](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes) niin, että oikeanpuoleisimmat taulukon solut jokaisessa taulukossa on varustettu punaisella taustavärillä. Pyri tekemään tämä niin ettet tee muutoksia HTML-koodiin, vaan tee toteutus puhtaasti CSS-selectoreilla ja tyyleillä.
 
-add caption HTML element for each table
-set a different background color for each table
-set a different background color for odd and even rows
-decrease the font size of the captions (use percentages, for example, 75%)
-decorate caption text as you wish (background color, font color)
-change the placement of a caption to the bottom of the table
-set margins equating to one lines height above and below caption
-30. Borders borders borders
-Surround the text paragraphs with a solid 4px border. Embed the text paragraphs, thus set a light color to the top border, some shade for sides and darker color for the bottom.
+Katso [esimerkki](https://tiko.jamk.fi/~hsateila/assets/media/tablecolors.png).
 
-Set paddings that equal two times the fonts size for left and right sides of paragraphs and 1x root elements font size paddings above and below paragraphs. Use shorthand properties for margins and paddings.
+Aiemmin asetit erilaisen taustavärin parittomille ja parillisille riveille käyttäen luokkia. Muuta nyt fontin väri joka toisella rivillä käyttäen pseudo-luokkia (jälleen, tee tämä CSS-koodilla koskematta HTML-rakenteeseen).
 
-31. Links with dotted borders
-Give all images which are also links a dotted border (in our case only the Tiko (if done like the example, but it is the one from exercise 9) logo but write a general declaration by using descendant (contextual) selectors). Leave some space between the image and border and also set small margins around the border.
+## MHOO 6. Pseudoelentit
 
-Pseudo-classes
-Important information below!
+Lue seuraavat tutoriaalit:
 
-Many HTML elements have special states associated with them, for example the link tag has at least four different states that can be styled separately. A pseudo-class is a predefined state or use of an element that can be styled independently.
+- [Pseudo-classes and pseudo-elements (MDN)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [CSS Pseudo-elements (Javapoint)](https://www.javatpoint.com/css-pseudo-elements)
+- [Pseudo-elements (Web.dev)](https://web.dev/learn/css/pseudo-elements/)
 
-Links: pseudo-classes are used to style normal state of the link (link), how the link appears after it has been visited (visited), how the link appears while a user hovers mouse over it (hover) and how the link appears when a user is clicking it.
-Dynamic: pseudo-classes can be applied to any element to define how it appears when a user hovers over it, clicks it or selects it.
-Structural: pseudo-classes are similar to the sibling combinatory selectors but allow you to specifically style elements based on an exact or computed numeric position.
-32. links with pseudoclasses
-Add style definitions for links. Make sure you have defined the following:
+1. Luo uusi järjestelemätön lista (ul) ja lisää siihen neljä listaelementtiä. Käytä oikeaa pseudoelementtiä löytääksesi CSS:llä oikean kohdan ja muuta oletustyyliä.
+2. Käytä ```::before``` -pseudoelementtiä muuttaaksesi tyylin emojiksi.
+3. Käytä oikeaa pseudoelementtiä muuttaaksesi valitun tekstin tyyliä. Muuta taustaväri esimerkiksi vihreäksi.
 
-link
-active
-hover
-focus
-visited
-33. Woah
-Previously you defined dotted borders to the images which are also links. Now add hover pseudo-class which changes dotted borders to solid borders and displays only top and bottom borders when a user hovers over the image.
+# Asettelun luonti ja sijainti (positioning)
 
-34. Structural pseudo classes
-Add structural pseudo-class that displays the rightmost cells of each table row with red (or other suitable) background color. Do not touch HTML code this time (ie, do not create classes) but add only CSS stuff.
+>**Elementtien ryhmittely on ensisijaisen tärkeää kun luodaan CSS-pohjaisia verkkosivuasetteluita!** Joten: viimeistään tässä vaiheessa, käy läpi dokumenttisi rakenne, tarkista erityisesti ryhmittely ja validoi HTML-rakenne validaattorilla ja korjaa virheet. Asettelun luonti ei onnistu jos elementit on ryhmitelty väärin tai HTML-merkkauksessa on virheitä, kuten puuttuvia sulkevia tageja, &gt;-merkkejä tms.
+{: .prompt-warning}
 
-See an example.
+Normaalin DOM:n (eli HTML-dokumentin) renderöintijärjestyksen voi CSS:n avulla muuttaa. On erilaisia tapoja muuttaa elementtien ja blokkien sijaintia, esimerkiksi [float](https://www.w3schools.com/css/css_float.asp) ja [position](https://www.w3schools.com/Css/css_positioning.asp) -propertyt. CSS3 tarjoaa myös gridin ja flexboxin tähän tarkoitukseen, ja ne ovatkin varsin olennaisia, mutta palaamme niihin myöhemmin.
 
-Earlier you set different background color for odd and even rows in table using classes. Now change font color for every second row using pseudo-classes (again, do not touch HTML code).
+Tsekkaa [CSS-positioning 101](http://www.alistapart.com/articles/css-positioning-101/) ja [CSS positioning in 10 steps](http://www.barelyfitz.com/screencast/html-training/css/positioning/).
 
-MHOO 6. Pseudo elements
-Read the following tutorials
+## 35. Disclaimer näkysälle
+Lisää seuraavanlainen HTML-snippet verkkosivullesi ```header```- ja ```<nav>+```-osioiden väliin. Lisää myös alempaa löytyvä tyylimäärittely CSS-tiedostoosi.
 
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
-https://www.javatpoint.com/css-pseudo-elements
-https://web.dev/learn/css/pseudo-elements/
-Create another one of those pesky unordered lists and put four list items in it. Use a correct pseudo element to target the marker and change the default style.
-Use the ::before pseudo element to change the markers style to an emoji.
-Use the right proper pseudo element to change the appearance of selected text. Change the background color to, for example, green.
-Positioning
-Important information below!
-
-When creating CSS-based layouts it is essential to group elements - so take your time to check your document structure. Typical rendering order can be changed with CSS. Basically, there are different ways of positioning elements and blocks: float and position properties. CSS3 offers us different methods (Grid and flexbox) but we will take a look at those features later.
-
-See CSS positioning 101 and CSS positioning in 10 steps.
-
-35. Disclaimer!!!
-Insert the following HTML code snippet between the header and nav sections. Add also style declarations to your CSS file.
-
+```html
 <div id="disclaimer">
 <img src="http://www.1clipart.com/clipart/signs/exclamation/74-415115695.gif" alt="Note" />
 This is an example document for Web Page Development course.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -292,6 +269,9 @@ nascetur ridiculus mus. Donec orci erat, consectetur id dignissim quis, sodales 
 aliquam nulla aliquam sit amet. Quisque risus tortor, sodales a vulputate vitae, aliquet vitae dui. Integer et magna metus.
 Nulla tristique lobortis sapien eu condimentum.
 </div>
+```
+
+```css
 #disclaimer {
     border: 1px dotted red;
     background-color: #ddd;
@@ -302,44 +282,45 @@ Nulla tristique lobortis sapien eu condimentum.
     margin-bottom: 0.5em;
     padding: 1em;
 }
-36. Floating images
-Now, make the text wrap around the exclamation sign (see an example). The task is not very complex with a float property. Add also right padding to the image.
+```
 
-37. Floating images pt. 2
-Make the text wrap around the one with the link and the image - the same as in the previous exercise except place image on the right this time. To make it a bit challenging modify the code in the following way:
+## 36. Kelluvat kuvat
+Seuraavaksi kääri teksti huutomerkkikuvan kanssa [esimerkin](https://tiko.jamk.fi/~hsateila/assets/media/disclaimer_wrap.png) mukaisesti. Homman pitäisi luonnistua suhteellisen helposti ```float```-propertyn avulla. Lisää myös hieman täytettä (padding) oikealle puolelle kuvaa.
 
+## 37. Kelluvat kuvat, osa 2
+Laita teksti kääriytymään linkin sisältävän kuvan ympärille, samaan tapaan kuin edellisessä harjoituksessa paitsi että sijoita kuva tällä kertaa oikealle. Lisähaasteena muokkaa koodia seuraavasti:
+
+```html
 <p><a href="http://www.jamk.fi">
 <img src="http://tiko.jamk.fi/~polkte/webui/images/tikoblue.png" alt="JAMK/TIKO" />
 </a>JAMK
 </p>
-This means you have to move the link with the image inside a single “p” element. If you don’t have image with a link, use the above code as is
+```
+Tämä tarkoittaa että sinun täytyy siirtää linkki, jossa kuva on, yhden yksittäisen ```p```-elementin sisään. **Jos sinulla ei ole kuvaa jossa on linkki, käytä yllä olevaa koodia sellaisenaan.**
 
-Add float property and take a look at the paragraph size. Probably it looks like this although it should look this. Confused? Check out a clearfix hack and others with discussion.
+## 38. Absoluuttinen sijoitus (absolute positioning)
+Siirrä nav-blokki lähelle vasenta yläkulmaa. Käytä _absoluuttista sijoittamista (absolute positioning)_. Poista sisällöstä vasen ja oikea margianali. Esimerkki [tässä](https://tiko.jamk.fi/~hsateila/assets/media/abs_nav.png). Pohdi missä tilanteissa absoluuttinen sijoittaminen selainikkunan suhteen voisi olla hyvä käytäntö?
 
-38. Absolute position.
-Relocate the nav block near the top left corner. Use absolute positioning. Remove left margins from the content. An example. Consider in which situations absolute positioning (related to the viewport) is useful.
+## 39. Palataan kiinteään sijoitukseen (fixed positioning)
+Muuta position-propertyn arvoksi ```fixed```. Miten tilanne muuttui? Milloin tulisi käyttää kiinteää (fixed) sijoitusta?
 
-39. Just kidding, lets use fixed
-Change the value of position property to fixed. What is the difference? When to use fixed positioning?
+## 40. Display -propertyt ja arvot
+Muuta CSS näyttämään listaelementit nav-blokissa yhdellä viivalla (vinkki: tutki miten display-property toimii) ja pienennä fontin kokoa.
 
-40. Display properties and values
-Modify CSS to display list items in the nav block in a single line (hint: explore display property) and decrease the size of font.
+## 41. Pseudoluokat ja sisältö CSS:n kautta
+Luo CSS-määrittelyt (käytä pseudoluokkia) jotka automaattisesti lisäävät " *** " ennen jokaista listaelementtiä ja saman merkkijonon viimeisen elementin jälkeen (navigaatioblokki näyttäisi jotakuinkin tältä: ```*** First Chapter *** Second Chapter *** Third Chapter ***```). Vihje: Selvitä miten ```content```-property toimii.
 
-41. Pseudo classes and content via CSS
-Create CSS declarations (use pseudo-classes) which automatically adds " *** " before each list item and the same string after the last list item (the nav block looks like this: *** First Chapter *** Second Chapter *** Third Chapter ***). HINT: check content property.
+Aseta leveys siten että navigaatio asettuu koko sivun leveydelle samalle riville. Siirrä navigaatio sivun alaosaan ja käytä fixed -sijoitusta samoin kuten edellisessä harjoituksessa.
 
-Set the width in a way that it covers the whole browser window. Relocate the nav to the bottom of the web page and use fixed positioning as in the previous exercise.
+Katso [esimerkki](https://tiko.jamk.fi/~hsateila/assets/media/nav_bottom_fixed.png)
 
-See an Example.
+## 42. Piilota asioita tulostusta varten
+Kirjoita CSS-määrittely joka piilottaa disclaimer-osion kun sivua tulostetaan. Tämä ominaisuus on hyödyllinen jos sinun tarvitsee muotoilla sivua varten tulostinystävällinen tyyli: voit helposti piilottaa mainoksia, navigaatiot ja muut vastaavat tulostusversiosta. Voit tarkistaa lopputuloksen käyttämällä selaimen sivun tulostuksen esikatselua.
 
-42. Hiding things when printing
-Write a CSS declaration that hides the disclaimer when printing the document. This feature is useful when creating printer friendly stylesheets: you can easily remove ads and navigation links and such from printed version. You can check the result by using browser’s print preview feature.
+## 43. Suomen ja Jyväskylän kartta
+Sisällytä sivulle Suomen kartta (saat tiedoston [tästä](https://tiko.jamk.fi/~hsateila/assets/media/finland.jpg).) ja sijoita teksti Jyväskylä dokumentille. Siirrä "Jyväskylä" -teksti kartan päälle suurin piirtein sinne minne se kuuluu. Tutki hieman miten suhteellinen sijoitus (relative positioning) toimii jotta saat tekstin oikealle paikalle kuvan päälle.
 
-43. Map of Finland and Jyväskylä rock city!
-Insert the map of Finland (the file is located at https://tiko.jamk.fi/~polkte/webui/images/finland.jpg and text “Jyväskylä” to the document. Move Jyväskylä text to the correct location over the map. In this case you can’t use absolute positioning so you probably want to take a closer look at relative positioning.
+## 44. Under construction, tulossa pian
+Aseta [min-width](http://css-tricks.com/almanac/properties/m/min-width/)-property container-diville. Lisää [rakennustyömaakuva](https://tiko.jamk.fi/~hsateila/assets/media/construction.gif) juuri container-divin alle ja anna tälle elementille uniikki id. Rakennustyömaakuvan tulisi pysyä container-divin oikeassa yläkulmassa myös silloin kun selainikkunan kokoa muutetaan. Tämä vaatii absoluuttisen sijoituksen (absolute positioning) käyttöä suhteellisen sijoituksen (relative positioning) sisällä.
 
-44. Under construction
-Set min-width property for the container div. Add construction image just after the container div and declare an unique id for the element. Set element’s position in CSS so that the image is located in the right top corner of the container div. The construction image must stay in the top right corner of the container div even if the browser window is resized. This requires absolute positioning inside relative positioning.
-
-Examples: image 1 and image 2.
--->
+Esimerkit: [Kuva 1](https://tiko.jamk.fi/~hsateila/assets/media/construction_1.png) ja [Kuva 2](https://tiko.jamk.fi/~hsateila/assets/media/construction_2.png)
