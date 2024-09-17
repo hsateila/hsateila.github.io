@@ -255,7 +255,7 @@ Normaalin DOM:n (eli HTML-dokumentin) renderöintijärjestyksen voi CSS:n avulla
 Tsekkaa [CSS-positioning 101](http://www.alistapart.com/articles/css-positioning-101/) ja [CSS positioning in 10 steps](http://www.barelyfitz.com/screencast/html-training/css/positioning/).
 
 ## 35. Disclaimer näkysälle
-Lisää seuraavanlainen HTML-snippet verkkosivullesi ```header```- ja ```<nav>+```-osioiden väliin. Lisää myös alempaa löytyvä tyylimäärittely CSS-tiedostoosi.
+Lisää seuraavanlainen HTML-snippet verkkosivullesi ```header```- ja ```<nav>```-osioiden väliin. Lisää myös alempaa löytyvä tyylimäärittely CSS-tiedostoosi.
 
 ```html
 <div id="disclaimer">
