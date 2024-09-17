@@ -4,7 +4,7 @@ title: 'Web-perusteet: Harjoitustehtävät, CSS'
 date: 2024-09-09 15:01 +0300
 categories: [Opintojaksot, Web-perusteet]
 ---
-_Mahtavat kiitokset Teemu Pölkille tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista._
+_Mahtavat kiitokset Teemu Pölkille ja Jarkko Immoselle tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista._
 
 # CSS: käyttö
 

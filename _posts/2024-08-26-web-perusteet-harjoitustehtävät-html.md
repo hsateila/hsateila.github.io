@@ -9,7 +9,7 @@ HTML on kirjainyhdistelmä sanoista _**H**yper**T**ext **M**arkup **L**anguage_.
 
 Lue HTML-materiaali ennen kuin jatkat harjoituksiin.
 
-Mahtavat kiitokset Teemu Pölkille tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista.
+Mahtavat kiitokset Teemu Pölkille ja Jarkko Immoselle tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista.
 
 # Yleiset HTML-elementit
 Aivan perusmuotoinen HTML-sivu tarvitsee vähintään kolme pääelementtiä. ```<html>```-elementti pitää sisällään (nesting) kaksi muuta, ```<head>```ja ```<body>```-elementit. Pakollinen ```<title>```-elementti sijoitetaan ```<head>```-elementin sisään, ja kaikki käyttäjälle näkyvä sisältö sijoitetaan ```<body>```-elementin sisään. Oikeasta syntaksista on muistettava pitää huoli jotta sivu toimii oikein kaikilla alustoilla ja erilaisissa ympäristöissä. Dokumentin tyyppimääritelmässä kerrotaan dokumentin kieli ja versio. Dokumentin määritelmän tulee olla ensimmäinen rivi koko dokumentissa.
