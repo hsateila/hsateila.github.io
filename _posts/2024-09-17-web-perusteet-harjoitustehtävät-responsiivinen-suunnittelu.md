@@ -158,7 +158,7 @@ Poista uudelta sivulta pääsisältö. Jätä paikalleen header, navigation, foo
 ### Osa 2.
 Etsi ruokakuvia Creative Commons -haulla tai [tämän paketin](https://tiko.jamk.fi/~hsateila/files/gridpic.zip) kuvia. Tallenna ne projektiisi kansioon josta löydät ne.
 
-Luo uusi CSS grid -elementti johon luot kuvagallerian. Katso esimerkki tästä, ja jätä siniset "rajat" huomiotta, siinä meille vain Firefox kertoo missä gridin rajat ovat! Gridissä tulisi olla kolme saraketta ja kolme riviä.
+Luo uusi CSS grid -elementti johon luot kuvagallerian. Katso esimerkki [tästä](https://tiko.jamk.fi/~hsateila/assets/media/css-grid-1.png), ja jätä siniset "rajat" huomiotta, siinä meille vain Firefox kertoo missä gridin rajat ovat! Gridissä tulisi olla kolme saraketta ja kolme riviä.
 
 Lisää pieni väli rivien ja sarakkeiden väliin ja keskitä kuvat vertikaalisesti "lokeroihinsa".
 
