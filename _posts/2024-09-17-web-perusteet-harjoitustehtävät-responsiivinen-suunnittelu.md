@@ -7,6 +7,7 @@ categories: [Opintojaksot, Web-perusteet]
 _Mahtavat kiitokset Teemu Pölkille ja Jarkko Immoselle tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista._
 
 # Responsiivisten verkkosivujen suunnittelu
+
 Responsiivinen suunnittelu verkkosivujen yhteydessä tarkoittaa sellaista ulkoasusuunnittelua, jossa sivupohja sopeutuu laitteeseen ja ruutukokoon jolla sivustoa tarkastellaan. Muutamia esimerkkejä responsiivisesta suunnittelusta ovat [Fazer](https://www.fazer.fi/), [The Boston Globe](https://www.bostonglobe.com/) ja [Helsingin Sanomat](https://www.hs.fi/). Selaa sivuja ja muuta selainikkunan kokoa jolloin näet miten sivu käyttäytyy pienemmässä ikkunakoossa. Tarkastele sivuja myös puhelimellasi.
 
 Selaimen kehittäjätyökaluilla voi myös tarkastella sivuja simuloiden näkymää erilaisilla laitteilla:
@@ -14,6 +15,7 @@ Selaimen kehittäjätyökaluilla voi myös tarkastella sivuja simuloiden näkym�
 ![Kehittäjätyökalut ja responsiivisuus](/assets/media/webtools-responsive.png){: width="400" }
 
 Kun saat hieman käsitystä siitä mikä responsiivisen suunnittelun ajatus on, tutustu seuraavaan materiaaliin:
+
 - [Beginner's guide to media queries (MDN)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
 - [Historiaa: Responsive Web Design - ensimmäisiä artikkeleita responsiivisuudesta](https://alistapart.com/article/responsive-web-design/)
 - [MDN:n dokumentaatio responsiivisesta suunnittelusta](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
@@ -25,9 +27,10 @@ Media queryillä voidaan sovittaa ulkoasu erilaisille laitteille, mutta jotta p�
 > Perusajatuksena puhdas HTML-rakenne ilman tyylittelyjä on lähtökohtaisesti **Fluid layout**: se muotoutuu ruutukoon muuttuessa automaattisesti. Voit testata tätä kommentoimalla kaikki tyylitiedostot pois HTML-tiedostostasi väliaikaisesti.
 {: .prompt-info }
 
-# Box-sizing property!
+## Box-sizing property
+
 > Alla oleva on syytä sisäistää hyvin, sillä se vaikuttaa kaikkeen siihen mitä jatkossa teemme!
-{: .prompt-warning} 
+{: .prompt-warning}
 
 **```box-sizing``` -CSS-propertylla määritellään se, miten elementin kokonaisleveys ja korkeus lasketaan.**
 
@@ -56,7 +59,8 @@ renderöi laatikon jonka leveys on 370 pikseliä.
 
 näyttäisi laatikon jonka leveys on 350 pikseliä, mutta itse sisältölaatikon koko olisi tällöin 330px.
 
-## 45. Valmistautuminen responsiivisen suunnittelun harjoituksiin
+### 45. Valmistautuminen responsiivisen suunnittelun harjoituksiin
+
 Lataa [rwdex.zip](https://tiko.jamk.fi/~hsateila/files/rwdex.zip) ja pura se. Voit purkaa tämän vaikkapa omaan kansioonsa harjoitustyökansiosi alle. Paketti sisältää yksinkertaisen verkkosivun johon on rakennettu **_mobile first_** -tyyppinen asettelu. Tehtäväsi on luoda responsiivinen verkkosivu määrittelyjen mukaisesti ja niiden asetteluiden mukaan mitkä on annettu alla olevissa kuvissa. Saat neljä media querya joihin sinun on tehtävä tarvittavat muutokset.
 
 Muuta kaikki marginaalit ja täytteet (margins and paddings) käyttämään rem tai em -yksiköitä.
@@ -65,7 +69,8 @@ Oletusasetteluillaan sivu näyttää tältä:
 
 ![RWD-esimerkki ja malli](./assets/media/rwd-example-1.png){: width="200" }
 
-## 46. 564px
+### 46. 564px
+
 Alta näet esimerkkikuvat mihin tulisi pyrkiä. Viewportin eli näkymän leveys on asetettu 650px.
 
 ![RWD-esimerkki, 650px, yläosa.](./assets/media/resp-650px-top.png){: width="200" }
@@ -80,7 +85,8 @@ Alta näet esimerkkikuvat mihin tulisi pyrkiä. Viewportin eli näkymän leveys 
 - Listaelementeille jotka sijaitsevat nav-elementin sisällä: lisää 0.5rem padding ylä- ja alaosaan ja 0 padding vasempaan ja oikeaan reunaan. Käytä :hover -pseudoluokkaa muuttaaksesi listaelementin taustavärin vaaleammaksi kun hiiri on ao. listaelementin päällä.
 - Keskitä kaikki kuvat omien elementtiensä sisällä.
 
-## 47. 700px
+### 47. 700px
+
 Esimerkkikuvat jälleen alla sen suhteen mihin pyritään. Viewportin leveys asetetaan 750px.
 
 ![RWD-esimerkki, 650px, yläosa.](./assets/media/resp-750px-top.png){: width="200" }
@@ -92,7 +98,8 @@ Kuvat ovat liian suuria näyttöön, on syytä skaalata niitä pienemmiksi ja ke
 - Luo media query joka astuu voimaan kun sivu on leveämpi kuin 700 pikseliä.
 - Käytä ```float: left;``` ja ```float: right;``` -propertyja niitä vastaaville luokille ja aseta kuvien leveys 45%.
 
-## 48. 850px
+### 48. 850px
+
 Ja esimerkkikuvat taas alla. Viewportin leveys 1200px.
 
 ![RWD-esimerkki, 650px, yläosa.](./assets/media/resp-1200px-top.png){: width="200" }
@@ -108,62 +115,71 @@ Lisäleveys antaa mahdollisuuden siirtää ```aside```-elementin ruudun oikeaan 
 - Aseta containerin maksimileveys. Noin 1000px on riittävä. Aseta containerille sellaiset tyylit että se keskitetään oman containerinsa sisällä.
 - Aseta footer-elementille padding 1rem. Aseta myös taustan väri. Tässä kohtaa saattaa ilmetä hankaluuksia float-propertyjen ja taustavärin kanssa. Korjaa ongelma [tämän artikkelin](https://www.w3schools.com/cssref/pr_class_clear.php) vinkkien avulla.
 
-# Grid ja Flex
+## Grid ja Flex
 
 Käy läpi tutoriaalit [Flexbox](https://scrimba.com/g/gflexbox):lle ja [CSS Grid](https://scrimba.com/g/gR8PTE):lle. Voit aloittaa muokkaamalla annettua koodia, kokeilla asioita ja missä tahansa tutoriaalin vaiheessa jatkaessasi muutoksesi tallentuvat muistilehtiövälilehteen oikealla.
 
 > **Flexbox** on erittäin hyödyllinen työkalu asetteluiden suunnitteluun. [CSS Flexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) on erittäin mainio lunttilappu CSS-kikoista ja asetteluista joita aiheeseen liittyy, laita se talteen kirjanmerkkeihin!
 {: .prompt-info}
-
 > **CSS Grid** on toinen erittäin käyttökelpoinen ja varmasti vastaan tuleva asia, ja tästä on olemassa samantyyppinen hieno lunttilappu: [CSS Grid Layout Guide](https://css-tricks.com/snippets/css/complete-guide-grid/). Lisää kirjanmerkkeihin tämäkin!
 {: .prompt-info}
 
-## 49. Flexboxin ja CSS Gridin konseptien esittelyä pelien avulla
+### 49. Flexboxin ja CSS Gridin konseptien esittelyä pelien avulla
+
 Pelaa ja läpäise seuraavat pelit:
 
 - [Flexbox Froggy](https://flexboxfroggy.com/)
 - [Flexbox Defence](http://www.flexboxdefense.com/)
 - [CSS Grid Garden](https://cssgridgarden.com/)
 
-## 50. Uusi projekti ja uusi HTML5-tehtävä
+### 50. Uusi projekti ja uusi HTML5-tehtävä
+
 Aloita uusi projekti ja kopioi esimerkkinä toimiva XHTML-koodi [tältä sivulta](https://tiko.jamk.fi/~hsateila/materiaalit/recipesite/recipes.html) ja lisää se recipes.html -nimiseen tiedostoon projektiisi. XHTML on vanhempi HTML-standardi ajalta ennen HTML5:ta ja nyt modernisoidaan tämä dokumentti.
 
-- Kopioi talteen myös kaikki liittyvät kuvat (citrus, logo, mainokset ja reseptikuvat) ja luo projektiin "pics"-niminen alikansio johon tallennat kuvat. 
-- Korjaa linkkiviittaukset jotta saat kuvat toimimaan. 
+- Kopioi talteen myös kaikki liittyvät kuvat (citrus, logo, mainokset ja reseptikuvat) ja luo projektiin "pics"-niminen alikansio johon tallennat kuvat.
+- Korjaa linkkiviittaukset jotta saat kuvat toimimaan.
 - Muuta recipes.html HTML5:ksi (katso [täältä](https://www.w3schools.com/tags/tag_doctype.asp) vinkit).
 - Vaihda divit, jotka toimivat nyt sectioneina, HTML5-elementeiksi ([tässä hieman muistin virkistystä semantiikasta](https://html5forwebdesigners.com/semantics/index.html))
 - Validoi koodi ja korjaa validointivirheet tarvittaessa.
 
-## 51. "A weird flex, but ok"
+### 51. "A weird flex, but ok"
+
 Käytä Flexboxia ja lisää hieman responsiivisuutta sivun mainoksiin! Kuvien tulisi pysyä samalla rivillä kunnes tilaa ei enää ole. Tämän jälkeen niiden tulisi "wrappaytyä". Lisää marginaalia mainoksille flex-containerin sisään. Käytä jälkeläisselectoreita!
 
 Esimerkkikuvat alla:
 
-### Esimerkki 1
+#### Esimerkki 1
+
 ![Esimerkki 1](./assets/media/weird-flex-1.png)
 
-### Esimerkki 2
+#### Esimerkki 2
+
 ![Esimerkki 2](./assets/media/weird-flex-2.png)
 
-### Esimerkki 3
+#### Esimerkki 3
+
 ![Esimerkki 3](./assets/media/weird-flex-3.png)
 
-## 52. Kuvat ruudukossa (eli gridissä!)
+### 52. Kuvat ruudukossa (eli gridissä!)
 
-### Osa 1.
+#### Osa 1
+
 Luo kopio alkuperäisestä recipes.html -tiedostosta ja anna sille nimeksi ```food_gallery.html```. Linkitä sivut: tee uusi linkki kummankin sivun nav-osastoon ja linkitä ne toisiinsa sellaisenaan. Alkuperäisen sivun navigaatioon linkki tiedostoon ```food_gallery.html``` ja uuteen linkki sivuun ```recipes.html```.
 
 Poista uudelta sivulta pääsisältö. Jätä paikalleen header, navigation, footer, aside ja ads.
 
-### Osa 2.
+#### Osa 2
+
 Etsi ruokakuvia Creative Commons -haulla tai [tämän paketin](https://tiko.jamk.fi/~hsateila/files/gridpic.zip) kuvia. Tallenna ne projektiisi kansioon josta löydät ne.
 
 Luo uusi CSS grid -elementti johon luot kuvagallerian. Katso esimerkki [tästä](https://tiko.jamk.fi/~hsateila/assets/media/css-grid-1.png), ja jätä siniset "rajat" huomiotta, siinä meille vain Firefox kertoo missä gridin rajat ovat! Gridissä tulisi olla kolme saraketta ja kolme riviä.
 
 Lisää pieni väli rivien ja sarakkeiden väliin ja keskitä kuvat vertikaalisesti "lokeroihinsa".
 
-### Osa 3.
+#### Osa 3
+
 Luo media query joka laskee sarakkeiden määrää kahteen kun kuvat muuttuvat liian pieniksi. Katso [esimerkkikuva](https://tiko.jamk.fi/~hsateila/assets/media/css-grid-2.png).
 
-### Osa 4.
+#### Osa 4
+
 Luo media query joka muuttaa CSS gridin flexbox-sarakkeeksi! Lopputuloksesta [esimerkki tässä](https://tiko.jamk.fi/~hsateila/assets/media/css-grid-2.png).
