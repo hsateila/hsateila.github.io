@@ -37,19 +37,19 @@ Jos graafinen käyttöliittymä näyttää sinulla erilaiselta, tarkista Cypress
 
 ![Welcome to Cypress](welcome-to-cypress-1.jpg "welcome-to-cypress-1")
 
-## 4. Seuraavaksi pitäisi tulla dialogi jossa lukee "Configuration files".
+## 4. Seuraavaksi pitäisi tulla dialogi jossa lukee "Configuration files"
 
 Voit jatkaa vain painamalla alareunasta "Continue".
 
 ## 5. Tämän jälkeen valitse haluamasi selain
 
-Cypress tarjoaa oletusarvoisesti Chromea tai Electronia sekä mahdollisesti muita selaimia joita on asennettuna. Kummankin pitäisi toimia, mutta Electron on selaimen sijasta sovelluskehys (framework), jolla voidaan rakentaa itsenäisiä työpöytäsovelluksia käyttäen samoja web-teknologioita millä selainpohjaisia sovelluksiakin rakennetaan. 
+Cypress tarjoaa oletusarvoisesti Chromea tai Electronia sekä mahdollisesti muita selaimia joita on asennettuna. Kummankin pitäisi toimia, mutta Electron on selaimen sijasta sovelluskehys (framework), jolla voidaan rakentaa itsenäisiä työpöytäsovelluksia käyttäen samoja web-teknologioita millä selainpohjaisia sovelluksiakin rakennetaan.
 
 ## 6. Jos kaikki meni oikein, Cypress avautuu valitsemallasi selaimella
 
-Saat todennäköisesti ikkunan, jossa lukee "Create your first spec", koska sinulla ei vielä ole yhtään testiä. 
+Saat todennäköisesti ikkunan, jossa lukee "Create your first spec", koska sinulla ei vielä ole yhtään testiä.
 
-## 7. Paina kohtaa "Create new spec" ja luo uusi spec.
+## 7. Paina kohtaa "Create new spec" ja luo uusi spec
 
 Polkua ei tarvitse vaihtaa jollet välttämättä halua. Tämä luo sinulle automaattisen testin: aja tämä testi ja katso mitä tapahtuu.
 
@@ -59,6 +59,6 @@ Oletusarvoisesti polku on luomasi testiharjoituskansion alla `/cypress/e2e/spec.
 
 ![Testikoodi](test-code.jpg "test-code")
 
-## 9. Cypressin tulisi ajaa päivitetty testikoodi uudelleen selaimessasi.
+## 9. Cypressin tulisi ajaa päivitetty testikoodi uudelleen selaimessasi
 
 Katso mitä tapahtuu! Tarvittaessa voit sulkea Cypressin avaaman selainikkunan, ja jos prosessi jäi terminaaliin pyörimään, voit pysäyttää sen painamalla ctrl + c ja tämän jälkeen käynnistää Cypressin uudelleen komennolla `npx cypress open`

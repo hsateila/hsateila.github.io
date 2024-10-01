@@ -6,16 +6,18 @@ categories: [Opintojaksot, Web-perusteet]
 ---
 _Mahtavat kiitokset Teemu Pölkille ja Jarkko Immoselle tämän materiaalin pohjana toimineesta englanninkielisestä opetusmateriaalista._
 
-# CSS: käyttö
+## CSS: käyttö
 
 Cascading Style Sheets eli CSS-tyylit tarjoavat verkkodokumentin julkaisijalle mahdollisuuden hallita julkaisun ulkoasua hyvin tarkasti. Näitä tyylimäärittelyitä voidaan käyttää myös muualal kuin verkkosivuilla. Tyylien käyttämiseksi tarvitaan kuitenkin toimiva HTML-syntaksi ja rakenne kun sitä käytetään verkkosivuston ulkoasun rakentamiseen.
 
 Lue [CSS:n esittely](https://tiko.jamk.fi/~polkte/webui/css.html) ensin jotta pääset jyvälle CSS:n syntaksista eli kieliopista. Seuraavaksi lisäämme tyylimäärityksiä tekemäämme HTML-dokumenttiin ulkoasun muokkaamiseksi.
 
-## 17. Span-elementti
+### 17. Span-elementti
+
 Seuraavan kahden harjoituksen tarkoitus on luoda [suuria alkukirjaimia (drop cap)](https://en.wiktionary.org/wiki/drop_cap). Merkkaa ensin ensimmäisen kappaleen ensimmäinen kirjain ```<span>```-elementillä. Virkistä sivu. Kuten näet, span-elementti itsessään ei vielä vaikuta ulkoasuun millään lailla. Tarvitaan tyylimäärittely jotta span-elementti vaikuttaa sisältöön jollakin tavalla. Tässä mielessä span on samankaltainen div-elementin ja semanttisten elementtien, kuten footer ja section, kanssa. Lisäämme tyylit seuraavaksi.
 
-## 18. Suuret alkukirjaimet
+### 18. Suuret alkukirjaimet
+
 Lisää style-tagin sisään tyylimäärittely span-elementille jotta saat suuren alkukirjaimen käyttöön. Lopputuloksen tulisi sivulla näyttää suurien alkukirjainten osalta [suurin piirtein tältä](https://tiko.jamk.fi/~hsateila/assets/media/ex_17_dropcaps.png). Alla listattuna tarvittavat tyylimäärittelyt. Voit lisätä tyylit kolmella tavalla, jotka on kerrottu aiemmin linkitetyssä CSS:n esittely -ohjeessa.
 
 ```css
@@ -31,10 +33,11 @@ line-height: 40px;
 
 Mikä on mielestäsi paras tapa lisät tyylit HTML-dokumenttiin? Mitkä ovat kunkin menetelmän hyödyt ja haitat? Kirjoita vastaus kommenttina HTML-tiedostoosi.
 
-## MHOO 4. CSS:n debuggaus
+### MHOO 4. CSS:n debuggaus
+
 Tämä harjoitus jatkaa MHOO3:n pohjalta. Lue [tutoriaali MDN:stä](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Debugging_CSS).
 
-# Marginaalit, värit ja taustakuvat
+## Marginaalit, värit ja taustakuvat
 
 Koko dokumentille (eli verkkosivulle) marginaalit määritellään body-elementtiin. Kuten muissakin tyyleissä, asetetut marginaalit ajavat ohi niistä mitä selain renderöi oletusarvoisesti jos marginaaleja ei ole määritelty.
 
@@ -44,13 +47,16 @@ Mittayksiköistä: CSS-määrittelyissä voi käyttää useita erilaisia mittayk
 
 [Värit](https://www.w3schools.com/cssref/css_colors.php) voidaan myös määritellä usealla eri tavalla CSS:ssä. Usein käytetään värin heksadesimaaliarvoa (esim. vaaleansininen #ADD8E6). Nyt, kun CSS3:ssa on esitelty myös läpinäkyvyys väriarvolle, voi olla järkevää tilanteesta riippuen käyttää myös värin RGB-arvoa joka sisältää tiedon läpinäkyvyydestä. Värin voi määritellä myös suoraan värin nimellä (esim. suoraan ```color: blue;```), mutta tätä tulisi käyttää vain aivan perusvärien tapauksessa. Usen värit määritellään yrityksen tai verkkosivun graafisessa ohjeistossa sekä RGB- että heksadesimaaliarvoilla.
 
-## 19. CSS:n lisääminen ulkoiseen tiedostoon
+### 19. CSS:n lisääminen ulkoiseen tiedostoon
+
 Lisää uusia tyylimäärityksiä ulkoiseen tyylitiedostoon. Määritä koko dokumentin leveydensi 50% ja määritä 16 pikselin marginaali dokumentin ylä- sekä alalaitaan ja 30 pikselin marginaali sekä vasempaan että oikeaan laitaan. Määrittele myös _kahden tyhjän rivin korkuinen marginaali_ ennen jokaista otsikkoa. Vinkki: rivin korkeuden tulisi olla riippuvainen fontin koosta, katso suhteelliset fontit (relative fonts).
 
-## 20. Heksadesimaalit, RGP:t ja alpha-kanava
+### 20. Heksadesimaalit, RGP:t ja alpha-kanava
+
 Aseta taustan väri haluamaksesi käyttäen värin heksadesimaalimerkintää ja pääotsikolle haluamasi väri käyttäen RGB-merkintätapaa. Lopuksi määritä h2-elementtien taustaväri RGBA-arvoilla. RGBA:n avulla voit määritellä värille myös läpinäkyvyysarvon.
 
-## 21. Pystysuorat taustat
+### 21. Pystysuorat taustat
+
 Etsi jokin sopiva taustakuva, tallenna se img-kansioon ja aseta se taustakuvaksi koko dokumentille. Aseta taustakuva toistumaan vain vertikaalisesti (pystytasossa), ei horisontaalisesti (vaakatasossa).
 
 Luo myös pystysuora liukuväritausta tekstikappaleille. Voit tehdä liukuväritaustakuvan vaikkapa [Gradient Image Makerilla](https://angrytools.com/gradient/image/). Määritä taustakuva toistumaan vaakatasossa ja määritä taustan väri niin että se on sama kuin taustakuvan liukuvärin alin väri. Esimerkkilopputuloksen näet [tästä](https://tiko.jamk.fi/~hsateila/assets/media/gradient_example.png).
@@ -59,10 +65,11 @@ CSS3:n avulla voi tehdä liukuvärin suoraankin. Voit etsiä tähän ohjeet nyt,
 
 Lisätietoa taustan ominaisuuksista löydät täältä: [Background properties](http://www.tizag.com/cssT/background.php).
 
-## 22. Värien määrittely
+### 22. Värien määrittely
+
 Määritä fonttien värit kappaleille ja otsikoille.
 
-# ID't, luokat ja kontekstisidonnaiset valitsimet
+## ID't, luokat ja kontekstisidonnaiset valitsimet
 
 Jotta homma helpottuu, yllä olevat termit englanniksi ovat _id_, _class_ ja _contextual selector_.
 
@@ -148,32 +155,39 @@ p + p em {
 
 Esimerkkejä miltä sivuston pitäisi suurin piirtein näyttää harjoituksen 35 jälkeen: [Kuva 1](https://tiko.jamk.fi/~hsateila/assets/media/ex35_1.png), [Kuva 2](https://tiko.jamk.fi/~hsateila/assets/media/ex35_2.png), [Kuva 3](https://tiko.jamk.fi/~hsateila/assets/media/ex35_3.png).
 
-## 24. Lisää semantiikkaa
+### 24. Lisää semantiikkaa
+
 Jos ei jo ole, niin nyt käytä elementtejä nav, header ja footer erottamaan sivuston nämä osiot. ```<header>```-elementin tulisi sisältää banneri ja pääotsikko, ```<nav>```sisältää linkkilistan ja ```<footer>```copyright-tiedot. Käytä div-elementtiä id:llä _content_ erottamaan toisen tason otsikot ja kappaleet muusta sisällöstä.
 
-## 25. Tausta navigaatiolle
+### 25. Tausta navigaatiolle
+
 Etsi jälleen sopiva taustakuva ja aseta se taustaksi ```<nav>```-osiolle. Asettele tämä taustakuva nav-elementin oikeaan yläkulmaan.
 
-## 26. Lisää spannia
+### 26. Lisää spannia
+
 Oletettakoon että haluat vahvistaa joitakin sanoja tai lauseita (esimerkiksi varoituksia) dokumentissasi, mutta **boldauksen** tai _italicin_ sijaan haluat tehdä niistä punaisia.
 
 Valitse dokumentistasi muutamia sanoja ja merkitse ne ```<span>```-elementillä. Virkistä sivu ja huomaat mahdollisesti että sinulla on ongelma. Voit ratkaista sen esimerkiksi luomalla luokat _dropcap_ ja _warning_ ja määritellä span-elementeille nämä luokat niille kuuluviin paikkoihin ja muokkaamalla tyylimäärityksiä siten että nämä kohdistuvat vain niihin span-elementteihin joilla on kyseinen luokka.
 
-## 27. Container-elementit
+### 27. Container-elementit
 
-### Osa 1.
+#### Osa 1
+
 Laita koko sisältö (heti alun body-tagin jälkeen ja juuri ennen sulkevaa body-tagia) uusi div-elementti. Kääritään siis koko sisältö uuden div-elementin sisään. Tällaista container-elementtiä yleensä käytetään käärimään koko sisältö sisäänsä body-elementin sisässä. Mutta miksi?
 
-### Osa 2.
+#### Osa 2
+
 Aseta CSS-tyylissä luomallesi containerille kiinteä leveys (poista tämä määritys body-elementiltä) ja sijoita se vaakatasossa selainikkunan keskelle (poista myös marginaalit body-elementiltä). Huomaa että sisällön pitäisi pysyä selaimen keskiosassa riippumatta siitä minkä levyinen itse selainikkuna on.
 
-### Osa 3.
-Kommentoi CSS:ssä (CSS-kommentit merkitään /* ja */ sisään) ```background-repeat: repeat-y;```määritys body-elementiltä ja aseta taustaväri sen sijaan container diville.
+#### Osa 3
 
-## MHOO 5. BEM (Block, Element Modifier)
+Kommentoi CSS:ssä (CSS-kommentit merkitään ```/*``` ja ```*/``` sisään) ```background-repeat: repeat-y;```määritys body-elementiltä ja aseta taustaväri sen sijaan container diville.
+
+### MHOO 5. BEM (Block, Element Modifier)
+
 Tutustu BEM:n [tällä videolla](https://www.youtube.com/watch?v=er1JEDuPbZQ) ja lukemalla [tämä dokumentaatio](https://en.bem.info/methodology/quick-start/).
 
-# Reunaviivat (borders) ja täytteet (paddings)
+## Reunaviivat (borders) ja täytteet (paddings)
 
 Reunaviivan tyyli, leveys ja väri voidaan määritellä tyylissä joko samalla kertaa tai erillisinä parametreina. On olemassa valmiita reunaviivatyyppejä, kuten solid, dotted jne. Jos halutaan erilaisia värejä tai leveyksiä, tarvitaan niitä varten oma tyylimäärityksensä.
 
@@ -181,13 +195,16 @@ Kun elementti tarvitsee tilaa ympärilleen sekä ulko- että sisäpuolelle, käy
 
 Ymmärtääksesi margin- ja padding-parametrit hyvin, sinun täytyy tuntea [CSS:n laatikkomalli eli CSS Box Model](https://www.w3schools.com/Css/css_boxmodel.asp).
 
-## 28. Reunaviivat ja täytteet
+### 28. Reunaviivat ja täytteet
+
 Aseta 1px kiiteä reunaviiva container-diville. Lisää myös padding samaan containeriin jotta saat sivulle hieman lisää ilmavuutta.
 
 Mikä on nyt container divin todellinen leveys? Hyödynnä selaintyökaluja tämän selvittämiseksi!
 
-## 29. Taulukot 2.
+### 29. Taulukot 2
+
 Muokkaa dokumentissasi olevia taulukoita seuraavasti:
+
 - Lisää [```<caption>```-elementti](http://www.w3schools.com/tags/tag_caption.asp) jokaiselle taulukolle.
 - Aseta jokaiselle taulukolle oma taustakuva
 - Aseta taulukon taustaväri erikseen sekä parittomille että parillisille riveille
@@ -196,15 +213,18 @@ Muokkaa dokumentissasi olevia taulukoita seuraavasti:
 - Siirrä caption-teksti taulukon alaosaan
 - aseta marginaalit siten että captionin ylä- ja alapuolella on yhden rivin verran tilaa.
 
-## 30. Lisää reunaviivoja
+### 30. Lisää reunaviivoja
+
 Ympäröi tekstikappaleet kiinteällä 4 pikselin reunaviivalla (```solid 4px border```). "Sisennä" kappaleet siten että asetat vaaleamman värin yläreunaan ja vajostava värisivuille sekä tummempi alareunaan.
 
 Aseta padding sellaiseksi että se on kaksi kertaa fontin koko vasemmassa ja oikeassa reunassa, ja 1x juurielementin fonttikokoa vastaava padding kappaleiden ylä- ja alaosaan. Käytä [lyhennettyjä parametreja](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) marginille ja paddingille.
 
-## 31. Linkkejä pisterajauksella
+### 31. Linkkejä pisterajauksella
+
 Anna kaikille niille kuville, jotka ovat linkkejä, pistereunaviiva (dotted border). Jos olet edennyt harjoituksen mukaan, näitä kuvia on vain yksi. Käytä kuitenkin yleistä parametria valitsemalla jälkeläinen. Jätä kuvan ja reunaviivan hieman tilaa sekä sisä- että ulkopuolelle (margin, ja padding).
 
-# Pseudoluokat
+## Pseudoluokat
+
 Monilla HTML-elementeillä on niihin liittyviä erikoistiloja. Esimerkiksi linkki voi olla neljässä tilassa jotka kaikki voi tyylitellä yksilöllisesti. [Pseudoluokka](https://www.w3schools.com/css/css_pseudo_classes.asp) on valmiiksi määritelty tila tai elementin käyttötapaus joka voidaan tyylitellä erikseen.
 
 **Linkit:** pseudoluokkia käytetään tyylittelemään linkin normaali tila, se miltä linkki näyttää kun siellä on jo vierailtu (visited), miltä linkki näyttää silloin kun sen päälle viedään hiiren kursori (hover) ja miltä linkki näyttää silloin kun käyttäjä klikkaa linkkiä
@@ -213,7 +233,8 @@ Monilla HTML-elementeillä on niihin liittyviä erikoistiloja. Esimerkiksi linkk
 
 **Rakenteelliset pseudoluokat:** pseudoluokat muistuttavat rakenteeltaan yhdistelmävalitsimia kun valitaan elementtien sisaruksia, mutta sallivat elementtien tyylittelyn joka perustuu joko täsmällisesti annettuun tai laskettuun sijaintiin. [Rakenteellisen pseudoluokan](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes) avulla voi muodostaa selectorin jolla päästään käsiksi HTML-elementteihin rakenteessa käyttämällä vaikkapa pseudoluokkaa ```:last-child```, joka valitsee elementin viimeisen jälkeläisen.
 
-## 32. Linkit pseudoluokilla
+### 32. Linkit pseudoluokilla
+
 Lisää tyylimääritykset dokumentin linkeille. Varmista että määrittelet seuraavat pseudoluokat:
 
 - link
@@ -222,10 +243,11 @@ Lisää tyylimääritykset dokumentin linkeille. Varmista että määrittelet se
 - focus
 - visited
 
-## 33. Pseudoluokka kuviin
+### 33. Pseudoluokka kuviin
+
 Aiemmin lisäsit pisteviivan niihin kuviin jotka toimivat myös linkkinä. Lisää nyt hover -pseudoluokka joka muuttaa pistereunaviivat kiinteiksi reunaviivoiksi ja näyttää reunaviivan pelkästään ylä- ja alareunassa kun käyttäjä vie hiiren kuvan päälle.
 
-## 34. Rakenteelliset pseudoluokat
+### 34. Rakenteelliset pseudoluokat
 
 Lisää [rakenteellinen pseudoluokka](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes) niin, että oikeanpuoleisimmat taulukon solut jokaisessa taulukossa on varustettu punaisella taustavärillä. Pyri tekemään tämä niin ettet tee muutoksia HTML-koodiin, vaan tee toteutus puhtaasti CSS-selectoreilla ja tyyleillä.
 
@@ -233,7 +255,7 @@ Katso [esimerkki](https://tiko.jamk.fi/~hsateila/assets/media/tablecolors.png).
 
 Aiemmin asetit erilaisen taustavärin parittomille ja parillisille riveille käyttäen luokkia. Muuta nyt fontin väri joka toisella rivillä käyttäen pseudo-luokkia (jälleen, tee tämä CSS-koodilla koskematta HTML-rakenteeseen).
 
-## MHOO 6. Pseudoelentit
+### MHOO 6. Pseudoelentit
 
 Lue seuraavat tutoriaalit:
 
@@ -245,7 +267,7 @@ Lue seuraavat tutoriaalit:
 2. Käytä ```::before``` -pseudoelementtiä muuttaaksesi tyylin emojiksi.
 3. Käytä oikeaa pseudoelementtiä muuttaaksesi valitun tekstin tyyliä. Muuta taustaväri esimerkiksi vihreäksi.
 
-# Asettelun luonti ja sijainti (positioning)
+## Asettelun luonti ja sijainti (positioning)
 
 >**Elementtien ryhmittely on ensisijaisen tärkeää kun luodaan CSS-pohjaisia verkkosivuasetteluita!** Joten: viimeistään tässä vaiheessa, käy läpi dokumenttisi rakenne, tarkista erityisesti ryhmittely ja validoi HTML-rakenne validaattorilla ja korjaa virheet. Asettelun luonti ei onnistu jos elementit on ryhmitelty väärin tai HTML-merkkauksessa on virheitä, kuten puuttuvia sulkevia tageja, &gt;-merkkejä tms.
 {: .prompt-warning}
@@ -254,7 +276,8 @@ Normaalin DOM:n (eli HTML-dokumentin) renderöintijärjestyksen voi CSS:n avulla
 
 Tsekkaa [CSS-positioning 101](http://www.alistapart.com/articles/css-positioning-101/) ja [CSS positioning in 10 steps](http://www.barelyfitz.com/screencast/html-training/css/positioning/).
 
-## 35. Disclaimer näkysälle
+### 35. Disclaimer näkysälle
+
 Lisää seuraavanlainen HTML-snippet verkkosivullesi ```header```- ja ```<nav>```-osioiden väliin. Lisää myös alempaa löytyvä tyylimäärittely CSS-tiedostoosi.
 
 ```html
@@ -284,10 +307,12 @@ Nulla tristique lobortis sapien eu condimentum.
 }
 ```
 
-## 36. Kelluvat kuvat
+### 36. Kelluvat kuvat
+
 Seuraavaksi kääri teksti huutomerkkikuvan kanssa [esimerkin](https://tiko.jamk.fi/~hsateila/assets/media/disclaimer_wrap.png) mukaisesti. Homman pitäisi luonnistua suhteellisen helposti ```float```-propertyn avulla. Lisää myös hieman täytettä (padding) oikealle puolelle kuvaa.
 
-## 37. Kelluvat kuvat, osa 2
+### 37. Kelluvat kuvat, osa 2
+
 Laita teksti kääriytymään linkin sisältävän kuvan ympärille, samaan tapaan kuin edellisessä harjoituksessa paitsi että sijoita kuva tällä kertaa oikealle. Lisähaasteena muokkaa koodia seuraavasti:
 
 ```html
@@ -298,29 +323,36 @@ Laita teksti kääriytymään linkin sisältävän kuvan ympärille, samaan tapa
 ```
 Tämä tarkoittaa että sinun täytyy siirtää linkki, jossa kuva on, yhden yksittäisen ```p```-elementin sisään. **Jos sinulla ei ole kuvaa jossa on linkki, käytä yllä olevaa koodia sellaisenaan.**
 
-## 38. Absoluuttinen sijoitus (absolute positioning)
+### 38. Absoluuttinen sijoitus (absolute positioning)
+
 Siirrä nav-blokki lähelle vasenta yläkulmaa. Käytä _absoluuttista sijoittamista (absolute positioning)_. Poista sisällöstä vasen ja oikea margianali. Esimerkki [tässä](https://tiko.jamk.fi/~hsateila/assets/media/abs_nav.png). Pohdi missä tilanteissa absoluuttinen sijoittaminen selainikkunan suhteen voisi olla hyvä käytäntö?
 
-## 39. Palataan kiinteään sijoitukseen (fixed positioning)
+### 39. Palataan kiinteään sijoitukseen (fixed positioning)
+
 Muuta position-propertyn arvoksi ```fixed```. Miten tilanne muuttui? Milloin tulisi käyttää kiinteää (fixed) sijoitusta?
 
-## 40. Display -propertyt ja arvot
+### 40. Display -propertyt ja arvot
+
 Muuta CSS näyttämään listaelementit nav-blokissa yhdellä viivalla (vinkki: tutki miten display-property toimii) ja pienennä fontin kokoa.
 
-## 41. Pseudoluokat ja sisältö CSS:n kautta
+### 41. Pseudoluokat ja sisältö CSS:n kautta
+
 Luo CSS-määrittelyt (käytä pseudoluokkia) jotka automaattisesti lisäävät " *** " ennen jokaista listaelementtiä ja saman merkkijonon viimeisen elementin jälkeen (navigaatioblokki näyttäisi jotakuinkin tältä: ```*** First Chapter *** Second Chapter *** Third Chapter ***```). Vihje: Selvitä miten ```content```-property toimii.
 
 Aseta leveys siten että navigaatio asettuu koko sivun leveydelle samalle riville. Siirrä navigaatio sivun alaosaan ja käytä fixed -sijoitusta samoin kuten edellisessä harjoituksessa.
 
 Katso [esimerkki](https://tiko.jamk.fi/~hsateila/assets/media/nav_bottom_fixed.png)
 
-## 42. Piilota asioita tulostusta varten
+### 42. Piilota asioita tulostusta varten
+
 Kirjoita CSS-määrittely joka piilottaa disclaimer-osion kun sivua tulostetaan. Tämä ominaisuus on hyödyllinen jos sinun tarvitsee muotoilla sivua varten tulostinystävällinen tyyli: voit helposti piilottaa mainoksia, navigaatiot ja muut vastaavat tulostusversiosta. Voit tarkistaa lopputuloksen käyttämällä selaimen sivun tulostuksen esikatselua.
 
-## 43. Suomen ja Jyväskylän kartta
+### 43. Suomen ja Jyväskylän kartta
+
 Sisällytä sivulle Suomen kartta (saat tiedoston [tästä](https://tiko.jamk.fi/~hsateila/assets/media/finland.jpg).) ja sijoita teksti Jyväskylä dokumentille. Siirrä "Jyväskylä" -teksti kartan päälle suurin piirtein sinne minne se kuuluu. Tutki hieman miten suhteellinen sijoitus (relative positioning) toimii jotta saat tekstin oikealle paikalle kuvan päälle.
 
-## 44. Under construction, tulossa pian
+### 44. Under construction, tulossa pian
+
 Aseta [min-width](http://css-tricks.com/almanac/properties/m/min-width/)-property container-diville. Lisää [rakennustyömaakuva](https://tiko.jamk.fi/~hsateila/assets/media/construction.gif) juuri container-divin alle ja anna tälle elementille uniikki id. Rakennustyömaakuvan tulisi pysyä container-divin oikeassa yläkulmassa myös silloin kun selainikkunan kokoa muutetaan. Tämä vaatii absoluuttisen sijoituksen (absolute positioning) käyttöä suhteellisen sijoituksen (relative positioning) sisällä.
 
 Esimerkit: [Kuva 1](https://tiko.jamk.fi/~hsateila/assets/media/construction_1.png) ja [Kuva 2](https://tiko.jamk.fi/~hsateila/assets/media/construction_2.png)

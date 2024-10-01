@@ -5,19 +5,21 @@ date: 2024-08-08 13:09 +0300
 categories: [Opintojaksot, Testaus]
 toc: false
 ---
-# Kehitysympäristön asennusohje
+## Kehitysympäristön asennusohje
+
 Tarkempi ohje kehitysympäristön asennukseen (tarkista jos on ongelmia tai jos et ole Web-kehitysympäristöt -kurssilla ollut): [Jarkko Immosen kehitysympäristön rakennusohje](https://tiko.jamk.fi/~imjar/ohj1/ymparistoteht.html)
 
-## 1. Luo itsellesi hakemisto, mihin tulet tekemään testauksen tehtävät. 
-Aja terminaalilla tässä hakemistossa komento 
+### 1. Luo itsellesi hakemisto, mihin tulet tekemään testauksen tehtävät
+
+Aja terminaalilla tässä hakemistossa komento
 
 ```bash
 npm init -y
 ```
 
-Hakemistoon pitäisi ilmestyä tiedosto "package.json". Jos näin ei käy tai saat jonkun virheen, sinulla ei todennäköisesti ole asennettu Nodea. Asenna se haluamallasi tavalla, esim. osoitteesta https://nodejs.org
+Hakemistoon pitäisi ilmestyä tiedosto "package.json". Jos näin ei käy tai saat jonkun virheen, sinulla ei todennäköisesti ole asennettu Nodea. Asenna se haluamallasi tavalla, esim. osoitteesta <https://nodejs.org>
 
-## 2. Aja terminaalilla luomassasi hakemistossa komento
+### 2. Aja terminaalilla luomassasi hakemistossa komento
 
 ```bash
 npm i -D eslint eslint-config-google eslint-config-prettier prettier
@@ -25,7 +27,7 @@ npm i -D eslint eslint-config-google eslint-config-prettier prettier
 
 Nyt hakemistossa pitäisi olla myös tiedosto "package-lock.json" sekä uusi hakemisto, "node_modules".
 
-## 3. Luo hakemistoon tiedosto ".eslintrc" (huom! ei tiedostopäätettä) ja kopioi siihen seuraava koodi:
+### 3. Luo hakemistoon tiedosto ".eslintrc" (huom! ei tiedostopäätettä) ja kopioi siihen seuraava koodi
 
 ```json
 {
@@ -60,7 +62,7 @@ Nyt hakemistossa pitäisi olla myös tiedosto "package-lock.json" sekä uusi hak
 
 Nyt sinulla tulisi olla konffit samoin, kuin muilla ohjelmoinnin kursseilla.
 
-## 4. Asenna mocha & chai ajamalla terminaalissa komento 
+### 4. Asenna mocha & chai ajamalla terminaalissa komento
 
 ```bash
 npm install mocha chai --save-dev
@@ -84,8 +86,9 @@ Nyt package.json-tiedostossasi tulisi olla jotakin tämän näköistä:
 >**Tällä homma ei vielä toimi**, sillä edellinen komento asensi luultavasti uudemman 5.x.x Chai-version joka tukee ainoastaan ESM-moduuleja, ja harjoituksissa käytetään CommonJS-moduuleita. Tulevaisuudessa tämä tullaan korjaamaan "oikein" eli harjoitukset muokataan tukemaan ESM-moduuleja, mutta tällä kertaa riittää että muokkaat pacakage.json -tiedostossa Chai-versioksi yllä olevan 4.3.7 -version.
 {: .prompt-warning}
 
-## 5. package.json tiedostossa on kohta "scripts", 
-jossa lukee 
+### 5. package.json tiedostossa on kohta "scripts"
+
+jossa lukee
 
 ```json
 "scripts": {
@@ -100,16 +103,19 @@ Päivitä se alla näkyvään muotoon:
 },
 ```
 
-## 6. Luo ympäristömme testausta varten uusi hakemisto päähakemiston alle, ja anna sille nimeksi vaikkapa "laskin". 
+### 6. Luo ympäristömme testausta varten uusi hakemisto päähakemiston alle, ja anna sille nimeksi vaikkapa "laskin"
+
 Lataa [laskin_koodit.zip](https://tiko.jamk.fi/~hsateila/materiaalit/testaus/laskin_koodit.zip) -tiedosto, jossa on tiedostot "laskin.js" ja "laskinTest.js". Siirry laskin-hakemistoosi (tai miksikä sen nimesit), ja siirrä "laskin.js" sinne. Luo uusi hakemisto nimeltä "test", ja siirrä "laskinTest.js" -tiedosto sinne.
 
-## 7. Aja terminaalissa komento 
+### 7. Aja terminaalissa komento
+
 ```npx mocha``` siinä hakemistossa, jossa "laskin.js" on.
 
-## 8. Terminaaliin tulisi tulla tuloste, joka kertoo yhden testin onnistuneen, ja yhden epäonnistuneen.
+### 8. Terminaaliin tulisi tulla tuloste, joka kertoo yhden testin onnistuneen, ja yhden epäonnistuneen
+
 Tulosteen tulisi näyttää enemmän tai vähemmän tältä:
 
-```
+```text
 Laskimen testaus
 1 + 1 = 2
     √ Tarkistetaan, että plusLasku-funktio palauttaa oikean summan yhteenlaskulla 1 + 1
